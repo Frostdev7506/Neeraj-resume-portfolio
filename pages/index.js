@@ -12,9 +12,6 @@ import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
 
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
@@ -115,7 +112,7 @@ export default function Home() {
               <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
                 <Image src={node} layout="fill" />
               </div>
-              <p className="text-teal-500 py-1 text-2xl">NODE JS</p>
+              <p className="text-teal-500 py-1 text-2xl">Node Js</p>
             </div>
             {/* card 2 */}
             <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
@@ -234,15 +231,17 @@ export default function Home() {
 
         <section>
           <div className=" dark:bg-gray-800">
-            <h2 className="text-2xl text-gray-500 py-10">Resume Preview</h2>
-            <div className=" mx-10">
+            <h2 className="text-2xl text-gray-500 py-10 sm:py-1 md:py-2">
+              Resume Preview
+            </h2>
+            <div className=" mx-10 sm:mx-1">
               <iframe
                 src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
-                frameBorder="0"
+                frameBorder="2"
                 scrolling="auto"
                 layout="responsive"
                 width={"100%"}
-                height={"1200em"}
+                height={"1000em"}
               ></iframe>
             </div>
           </div>
