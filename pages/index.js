@@ -57,7 +57,7 @@ export default function Home() {
               <li>
                 <a
                   className="bg-gradient-to-r from-cyan-500 to-teal-500 border-y-cyan-500 text-white px-4 py-2 rounded-md ml-8"
-                  href="#"
+                  href="https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf"
                 >
                   Resume
                 </a>
@@ -82,10 +82,10 @@ export default function Home() {
             <a href="#">
               <AiFillTwitterCircle />
             </a>
-            <a href="#">
+            <a href="https://github.com/Frostdev7506">
               <AiFillGithub />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/neeraj-butola/">
               <AiFillLinkedin />
             </a>
           </div>
@@ -113,21 +113,21 @@ export default function Home() {
           {/* cards set-1 */}
           <div className="lg:flex gap-10">
             {/* card 1 */}
-            <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
+            <div className=" bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
               <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
                 <Image src={node} layout="fill" />
               </div>
               <p className="text-teal-500 py-1 text-2xl">NODE JS</p>
             </div>
             {/* card 2 */}
-            <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
+            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
               <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
                 <Image src={react} layout="fill" />
               </div>
               <p className="text-teal-500 py-1 text-2xl">React</p>
             </div>
             {/* card 3 */}
-            <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
+            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
               <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
                 <Image src={azure} layout="fill" />
               </div>
@@ -137,21 +137,21 @@ export default function Home() {
           {/* cards set 2 */}
           <div className="lg:flex gap-10">
             {/* card 1 */}
-            <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
+            <div className=" bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
               <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
                 <Image src={aws} layout="fill" />
               </div>
               <p className="text-teal-500 py-1 text-2xl">Amazon Web services</p>
             </div>
             {/* card 2 */}
-            <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
+            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
               <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
                 <Image src={github} layout="fill" />
               </div>
               <p className="text-teal-500 py-1 text-2xl">Github</p>
             </div>
             {/* card 3 */}
-            <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
+            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
               <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
                 <Image src={js} layout="fill" />
               </div>
@@ -230,6 +230,21 @@ export default function Home() {
                 src={web6}
               />
             </div>
+          </div>
+        </section>
+        {/* Resume section */}
+
+        <section>
+          <div className="bg-gray-50 text-center dark:bg-gray-800">
+            <h2 className="text-2xl text-gray-500 py-10">Resume Preview</h2>
+            <iframe
+              src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
+              frameBorder="0"
+              scrolling="auto"
+              layout="responsive"
+              width={"100%"}
+              height={"1000em"}
+            ></iframe>
           </div>
         </section>
       </main>
