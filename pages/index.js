@@ -242,7 +242,7 @@ export default function Home() {
             </h2>
             <div className=" mx-10  ">
               <Iframe
-                className="lg:h-screen md:h-screen sm:pb-96  "
+                className="lg:h-screen md:h-screen sm:h-96  "
                 src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
                 frameBorder="2"
                 scrolling="auto"
