@@ -70,18 +70,20 @@ export default function Home() {
               Neeraj Butola
             </h2>
             <h3 className=" text-2xl py-2 md:text-3xl">Software Developer</h3>
-            <p className="text-md py-5 leading-8 text-gray-500 md:text-xl max-w-lg  mx-auto lg:text-xl">
-              A dedicated developer with a product mindset who is experienced in
-              solving problems, making efficient and scalable apps, improving
-              performance and driving growth using cloud services like AWS and
-              Azure.
-            </p>
+            <a id="about" href="#">
+              <p className="text-md py-5 leading-8 text-gray-500 md:text-xl max-w-lg  mx-auto lg:text-xl">
+                A dedicated developer with a product mindset who is experienced
+                in solving problems, making efficient and scalable apps,
+                improving performance and driving growth using cloud services
+                like AWS and Azure.
+              </p>
+            </a>
           </div>
           <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-500">
             <a href="#">
               <AiFillTwitterCircle />
             </a>
-            <a href="https://github.com/Frostdev7506">
+            <a id="contact" href="https://github.com/Frostdev7506">
               <AiFillGithub />
             </a>
             <a href="https://www.linkedin.com/in/neeraj-butola/">
@@ -237,12 +239,12 @@ export default function Home() {
 
         <section>
           <div className=" dark:bg-gray-800">
-            <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2">
+            <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2 ">
               Resume Preview
             </h2>
-            <div className=" mx-10  ">
+            <div className=" mx-10  lg:h-screen sm:h-screen">
               <Iframe
-                className="lg:h-screen md:h-screen sm:h-96  "
+                className="lg:h-screen md:h-screen h-96 "
                 src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
                 frameBorder="2"
                 scrolling="auto"
@@ -253,6 +255,50 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <footer class="p-4 mt-5 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <a
+              href="https://flowbite.com/"
+              class="flex items-center mb-4 sm:mb-0"
+            >
+              <img
+                src="https://flowbite.com/docs/images/logo.svg"
+                class="h-8 mr-3"
+                alt="Flowbite Logo"
+              />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                Flowbite
+              </span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+              <li>
+                <a href="#about" class="mr-4 hover:underline md:mr-6 ">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6">
+                  Privacy Policy
+                </a>
+              </li>
+
+              <li>
+                <a href="#contact" class="hover:underline">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            ©{" "}
+            <a href="https://flowbite.com/" class="hover:underline">
+              NeerajButola™
+            </a>
+            . All Rights Reserved.
+          </span>
+        </footer>
       </main>
     </div>
   );
