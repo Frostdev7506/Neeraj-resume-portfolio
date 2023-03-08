@@ -8,6 +8,8 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 
+import Iframe from "react-iframe";
+
 import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 
 import Image from "next/image";
@@ -108,123 +110,53 @@ export default function Home() {
           {/* cards set-1 */}
           <div className="lg:flex gap-10">
             {/* card 1 */}
-            <div className=" bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
+            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
+              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
                 <Image src={node} layout="fill" />
               </div>
-              <p className="text-teal-500 py-1 text-2xl">Node Js</p>
-              {/* <ol className="text-gray-500 py-1 text-lg ">
-                <li>
-                  <a href="https://github.com/Frostdev7506/open-AI-Image-Generator">
-                    Image Generator
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/Frostdev7506/Lyriks">
-                    Online music Website
-                  </a>
-                </li>
-              </ol> */}
+              <p className="text-teal-500 py-2 mt-2 text-2xl">Node Js</p>
             </div>
             {/* card 2 */}
-            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
+            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
+              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
                 <Image src={react} layout="fill" />
               </div>
-              <p className="text-teal-500 py-1 text-2xl">React</p>
-              {/* <ol className="text-gray-500 py-1 text-lg ">
-                <li>
-                  <a href="https://github.com/Frostdev7506/open-AI-Image-Generator">
-                    Image Generator
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/Frostdev7506/Lyriks">
-                    Online music Website
-                  </a>
-                </li>
-              </ol> */}
+              <p className="text-teal-500 py-1 mt-2 text-2xl">React</p>
             </div>
             {/* card 3 */}
-            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
+            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
+              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
                 <Image src={azure} layout="fill" />
               </div>
-              <p className="text-teal-500 py-1 text-2xl">Microsoft Azure</p>
-              {/* <ol className="text-gray-500 py-1 text-lg ">
-                <li>
-                  <a href="https://github.com/Frostdev7506/open-AI-Image-Generator">
-                    Certification AZ:104
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/Frostdev7506/Lyriks">
-                    Certification AZ:900
-                  </a>
-                </li>
-              </ol> */}
+              <p className="text-teal-500 py-1  mt-2 text-2xl">
+                Microsoft Azure
+              </p>
             </div>
           </div>
           {/* cards set 2 */}
           <div className="lg:flex gap-10">
             {/* card 1 */}
-            <div className=" bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
+            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
+              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
                 <Image src={aws} layout="fill" />
               </div>
-              <p className="text-teal-500 py-1 text-2xl">Amazon Web services</p>
-              {/* <ol className="text-gray-500 py-1 text-lg ">
-                <li>
-                  <a href="https://github.com/Frostdev7506/open-AI-Image-Generator">
-                    Image Generator
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/Frostdev7506/Lyriks">
-                    Online music Website
-                  </a>
-                </li>
-              </ol> */}
+              <p className="text-teal-500 py-1 mt-2 text-2xl">
+                Amazon Web services
+              </p>
             </div>
             {/* card 2 */}
-            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
+            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
+              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
                 <Image src={github} layout="fill" />
               </div>
-              <p className="text-teal-500 py-1 text-2xl">Github</p>
-              {/* <ol className="text-gray-500 py-1 text-lg ">
-                <li>
-                  <a href="https://github.com/Frostdev7506/open-AI-Image-Generator">
-                    Image Generator
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/Frostdev7506/Lyriks">
-                    Online music Website
-                  </a>
-                </li>
-              </ol> */}
+              <p className="text-teal-500 py-1 mt-2 text-2xl">Github</p>
             </div>
             {/* card 3 */}
-            <div className="bg-gray-50 text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-20 overflow-hidden">
-                <Image src={js} layout="fillx" />
+            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
+              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
+                <Image src={js} layout="fill" />
               </div>
-              <p className="text-teal-500 py-1 text-2xl">Javascript</p>
-              {/* <ol className="text-gray-500 py-1 text-lg ">
-                <li>
-                  <a href="https://github.com/Frostdev7506/open-AI-Image-Generator">
-                    Image Generator
-                  </a>
-                </li>
-                <li>
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 my-2 px-4 rounded-full">
-                    <a href="https://github.com/Frostdev7506/open-AI-Image-Generator">
-                      Check it out
-                    </a>
-                  </button>
-                </li>
-              </ol> */}
+              <p className="text-teal-500 py-1 mt-2 text-2xl">Javascript</p>
             </div>
           </div>
         </section>
@@ -305,18 +237,19 @@ export default function Home() {
 
         <section>
           <div className=" dark:bg-gray-800">
-            <h2 className="text-3xl text-gray-500 py-10 sm:py-1 md:py-2">
+            <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2">
               Resume Preview
             </h2>
-            <div className=" mx-10 sm:mx-1">
-              <iframe
+            <div className=" mx-10  ">
+              <Iframe
+                className="lg:h-screen md:h-screen sm:pb-96  "
                 src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
                 frameBorder="2"
                 scrolling="auto"
                 layout="responsive"
                 width={"100%"}
-                height={"1000em"}
-              ></iframe>
+                height={"100%"}
+              />
             </div>
           </div>
         </section>
