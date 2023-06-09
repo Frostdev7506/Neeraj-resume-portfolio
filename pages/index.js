@@ -95,7 +95,7 @@ export default function Home() {
             <Image src={deved} layout="fill" objectFit="cover" />
           </div>
         </section>
-        section 2
+
         <section>
           <div className=" text-center mt-2 my-2">
             <h3 className=" text-3xl py-1 text-gray-500">My aspirations</h3>
