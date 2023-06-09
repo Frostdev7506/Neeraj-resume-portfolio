@@ -107,7 +107,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-        {/* section 2*/}
         <section>
           <div className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
             <div className="container mx-auto">
