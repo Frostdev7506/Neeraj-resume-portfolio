@@ -22,10 +22,11 @@ import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 
-import react from "../public/react.png";
+import react from "../public/react.svg";
 import azure from "../public/azure.png";
-import node from "../public/node-js.png";
-import aws from "../public/aws.png";
+import node from "../public/nodejs.svg";
+import mysql from "../public/mysql.svg";
+import aws from "../public/aws.svg";
 import github from "../public/github.png";
 import js from "../public/javascript.png";
 
@@ -94,8 +95,7 @@ export default function Home() {
             <Image src={deved} layout="fill" objectFit="cover" />
           </div>
         </section>
-
-        {/* section 2   */}
+        section 2
         <section>
           <div className=" text-center mt-2 my-2">
             <h3 className=" text-3xl py-1 text-gray-500">My aspirations</h3>
@@ -106,59 +106,64 @@ export default function Home() {
               applications in the <span className=" text-teal-500">Cloud</span>
             </p>
           </div>
-
-          <h3 className=" text-3xl py-10 text-gray-500 ">Technology Stack</h3>
-
-          {/* cards set-1 */}
-          <div className="lg:flex gap-10">
-            {/* card 1 */}
-            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
-                <Image src={node} layout="fill" />
+        </section>
+        {/* section 2*/}
+        <section>
+          <div className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
+            <div className="container mx-auto">
+              <h2 className="text-3xl text-gray-500 font-bold mb-8  dark:text-white">
+                Technology Stack
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* react */}
+                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
+                  <Image
+                    src={react}
+                    alt="React"
+                    className="h-20 mx-auto mb-4"
+                  />
+                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
+                    React.js
+                  </h3>
+                  <p className="text-gray-600">
+                    A JavaScript library for building user interfaces.
+                  </p>
+                </div>
+                {/* nodejs  */}
+                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
+                  <Image src={node} alt="React" className="h-20 mx-auto mb-4" />
+                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
+                    Nodejs
+                  </h3>
+                  <p className="text-gray-600">
+                    JavaScript runtime for server-side applications.
+                  </p>
+                </div>
+                {/* mysql */}
+                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
+                  <Image
+                    src={mysql}
+                    alt="React"
+                    className="h-20 mx-auto mb-4"
+                  />
+                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
+                    Mysql
+                  </h3>
+                  <p className="text-gray-600">
+                    Open-source relational database management system.
+                  </p>
+                </div>
+                {/* AWS */}
+                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
+                  <Image src={aws} alt="React" className="h-20 mx-auto mb-4" />
+                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
+                    AWS
+                  </h3>
+                  <p className="text-gray-600">
+                    Comprehensive cloud computing platform by Amazon.
+                  </p>
+                </div>
               </div>
-              <p className="text-teal-500 py-2 mt-2 text-2xl">Node Js</p>
-            </div>
-            {/* card 2 */}
-            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
-                <Image src={react} layout="fill" />
-              </div>
-              <p className="text-teal-500 py-1 mt-2 text-2xl">React</p>
-            </div>
-            {/* card 3 */}
-            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
-                <Image src={azure} layout="fill" />
-              </div>
-              <p className="text-teal-500 py-1  mt-2 text-2xl">
-                Microsoft Azure
-              </p>
-            </div>
-          </div>
-          {/* cards set 2 */}
-          <div className="lg:flex gap-10">
-            {/* card 1 */}
-            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
-                <Image src={aws} layout="fill" />
-              </div>
-              <p className="text-teal-500 py-1 mt-2 text-2xl">
-                Amazon Web services
-              </p>
-            </div>
-            {/* card 2 */}
-            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
-                <Image src={github} layout="fill" />
-              </div>
-              <p className="text-teal-500 py-1 mt-2 text-2xl">Github</p>
-            </div>
-            {/* card 3 */}
-            <div className="bg-gray-50 text-center shadow-lg p-5 rounded-xl my-5 flex-1 dark:bg-white ">
-              <div className=" relative mx-auto  w-80 h-80 mt-5 overflow-hidden">
-                <Image src={js} layout="fill" />
-              </div>
-              <p className="text-teal-500 py-1 mt-2 text-2xl">Javascript</p>
             </div>
           </div>
         </section>
@@ -236,7 +241,6 @@ export default function Home() {
           </div>
         </section>
         {/* Resume section */}
-
         <section>
           <div className=" dark:bg-gray-800">
             <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2 ">
@@ -255,11 +259,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         <footer class="p-4 mt-5 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
           <div class="sm:flex sm:items-center sm:justify-between">
             <a
-              href="https://flowbite.com/"
+              href="https://github.com/Frostdev7506"
               class="flex items-center mb-4 sm:mb-0"
             >
               <img
@@ -268,7 +271,7 @@ export default function Home() {
                 alt="Flowbite Logo"
               />
               <span class="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
-                developedbyneeraj
+                <p className="text-xl font-burtons ">developedbyneeraj </p>
               </span>
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
@@ -284,16 +287,19 @@ export default function Home() {
               </li>
 
               <li>
-                <a href="#contact" class="hover:underline">
+                <a href="#contact" className="hover:underline">
                   Contact
                 </a>
               </li>
             </ul>
           </div>
-          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
             ©{" "}
-            <a href="https://github.com/Frostdev7506" class="hover:underline">
+            <a
+              href="https://github.com/Frostdev7506"
+              className="hover:underline"
+            >
               NeerajButola™
             </a>
             . All Rights Reserved.
