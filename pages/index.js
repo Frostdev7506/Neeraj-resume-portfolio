@@ -131,7 +131,11 @@ export default function Home() {
                 </div>
                 {/* nodejs  */}
                 <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
-                  <Image src={node} alt="React" className="h-20 mx-auto mb-4" />
+                  <Image
+                    src={node}
+                    alt="Nodejs"
+                    className="h-20 mx-auto mb-4"
+                  />
                   <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
                     Nodejs
                   </h3>
@@ -143,7 +147,7 @@ export default function Home() {
                 <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
                   <Image
                     src={mysql}
-                    alt="React"
+                    alt="Mysql"
                     className="h-20 mx-auto mb-4"
                   />
                   <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
@@ -155,7 +159,7 @@ export default function Home() {
                 </div>
                 {/* AWS */}
                 <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
-                  <Image src={aws} alt="React" className="h-20 mx-auto mb-4" />
+                  <Image src={aws} alt="Aws" className="h-20 mx-auto mb-4" />
                   <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
                     AWS
                   </h3>
@@ -265,10 +269,10 @@ export default function Home() {
               href="https://github.com/Frostdev7506"
               class="flex items-center mb-4 sm:mb-0"
             >
-              <img
+              <Image
                 src="https://flowbite.com/docs/images/logo.svg"
                 class="h-8 mr-3"
-                alt="Flowbite Logo"
+                alt=" Logo"
               />
               <span class="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
                 <p className="text-xl font-burtons ">developedbyneeraj </p>
