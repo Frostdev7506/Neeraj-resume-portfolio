@@ -179,7 +179,7 @@ export default function Home() {
         <section>
           <div>
             <h3 className=" text-3xl py-5 text-gray-500">Portfolio </h3>
-            <p className="text-md py-5 leading-8 text-gray-500 lg:text-xl">
+            <p className="text-md py-5 leading-8 text-gray-500 lg:text-xl  ">
               My experience spans numerous personal ventures where my primary
               emphasis lies in designing, developing, and deploying cloud-based
               web and mobile solutions, with an emphasis on efficient
@@ -189,9 +189,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap  justify-center items-center">
             {/* card1 */}
-            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg ">
               <div className="relative">
                 <Image
                   src={web1}
