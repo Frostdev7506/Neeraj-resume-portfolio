@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { icons } from "react-icons";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -14,6 +15,7 @@ import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
+import GitHubWidget from "../components/GitHubWidget";
 
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
@@ -70,7 +72,9 @@ export default function Home() {
             <h2 className=" text-5xl py-2  text-teal-600  font-medium md:text-6xl">
               Neeraj Butola
             </h2>
-            <h3 className=" text-2xl py-2 md:text-3xl">Software Developer</h3>
+            <h3 className=" text-2xl text-teal-600 py-2 md:text-3xl ">
+              Software Developer
+            </h3>
             <a id="about" href="#">
               <p className="text-md py-5 leading-8 text-gray-500 md:text-xl max-w-lg  mx-auto lg:text-xl">
                 A dedicated developer with a product mindset who is experienced
@@ -107,15 +111,16 @@ export default function Home() {
             </p>
           </div>
         </section>
+
         <section>
           <div className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
             <div className="container mx-auto">
-              <h2 className="text-3xl text-gray-500 font-bold mb-8  dark:text-white">
+              <h2 className=" text-3xl py-5 mb-8  text-gray-500 ">
                 Technology Stack
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* react */}
-                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
+                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800 ">
                   <Image
                     src={react}
                     alt="React"
@@ -175,74 +180,189 @@ export default function Home() {
           <div>
             <h3 className=" text-3xl py-5 text-gray-500">Portfolio </h3>
             <p className="text-md py-5 leading-8 text-gray-500 lg:text-xl">
-              I have worked on several personal projects. My main focus is on
-              building <span className=" text-teal-500">Web</span> and{" "}
-              <span className=" text-teal-500">Native </span>
-              applications in the <span className=" text-teal-500">
-                Cloud
-              </span>{" "}
-              which are scalable . I have worked on many{" "}
-              <span className="text-teal-500">CRUD </span> Applications.
+              My experience spans numerous personal ventures where my primary
+              emphasis lies in designing, developing, and deploying cloud-based
+              web and mobile solutions, with an emphasis on efficient
+              architecture and scalability. In addition to my work on various
+              CRUD projects, I have a diverse skill set covering a wide range of
+              technology stacks
             </p>
           </div>
 
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1 ">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web1}
-              />
+            {/* card1 */}
+            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+              <div className="relative">
+                <Image
+                  src={web1}
+                  alt="Project 1"
+                  className="rounded-md"
+                  layout="responsive"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              <h2 className="text-2xl text-gray-500 font-medium my-2">
+                Project 1
+              </h2>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+              </p>
             </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web2}
-              />
+
+            {/* card2 */}
+            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+              <div className="relative">
+                <Image
+                  src={web2}
+                  alt="Project 2"
+                  className="rounded-md"
+                  layout="responsive"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              <h2 className="text-2xl text-gray-500 font-medium my-2">
+                Project 2
+              </h2>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+              </p>
             </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web3}
-              />
+
+            {/* card4*/}
+            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+              <div className="relative">
+                <Image
+                  src={web4}
+                  alt="Project 3"
+                  className="rounded-md"
+                  layout="responsive"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              <h2 className="text-2xl text-gray-500 font-medium my-2">
+                Project 3
+              </h2>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+              </p>
             </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web4}
-              />
+            {/* card4*/}
+            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+              <div className="relative">
+                <Image
+                  src={web4}
+                  alt="Project 4"
+                  className="rounded-md"
+                  layout="responsive"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              <h2 className="text-2xl text-gray-500 font-medium my-2">
+                Project 4
+              </h2>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+              </p>
             </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web5}
-              />
+            {/* card5*/}
+            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+              <div className="relative">
+                <Image
+                  src={web5}
+                  alt="Project 5"
+                  className="rounded-md"
+                  layout="responsive"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              <h2 className="text-2xl text-gray-500 font-medium my-2">
+                Project 5
+              </h2>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+              </p>
             </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web6}
-              />
+            {/* card6*/}
+            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+              <div className="relative">
+                <Image
+                  src={web6}
+                  alt="Project 6"
+                  className="rounded-md"
+                  layout="responsive"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              <h2 className="text-2xl text-gray-500 font-medium my-2">
+                Project 6
+              </h2>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+              </p>
             </div>
           </div>
         </section>
+
         {/* Resume section */}
         <section>
           <div className=" dark:bg-gray-800">
@@ -262,19 +382,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* github widget */}
+        <section>
+          <GitHubWidget />
+        </section>
+        {/* footer  */}
         <footer class="p-4 mt-5 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
           <div class="sm:flex sm:items-center sm:justify-between">
             <a
               href="https://github.com/Frostdev7506"
               class="flex items-center mb-4 sm:mb-0"
             >
-              <Image
-                src="https://flowbite.com/docs/images/logo.svg"
-                class="h-8 mr-3"
-                alt=" Logo"
-              />
               <span class="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
-                <p className="text-xl font-burtons ">developedbyneeraj </p>
+                <p className="text-xl text-gray-500 font-burtons ">
+                  developedbyneeraj
+                </p>
               </span>
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
