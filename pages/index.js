@@ -18,8 +18,12 @@ import deved from "../public/dev-ed-wave.png";
 import GitHubWidget from "../components/GitHubWidget";
 
 import web1 from "../public/web1.png";
+import lyrics from "../public/lyrics.png";
 import web2 from "../public/web2.png";
+import bootcamp from "../public/bootcamp.png";
 import web3 from "../public/web3.png";
+import imagegenerator from "../public/image-generator.png";
+import student from "../public/student.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
@@ -187,7 +191,7 @@ export default function Home() {
           </div>
         </section>
         {/* section 3  */}
-        <section>
+        <section className="mt-5">
           <div>
             <h3 className=" text-3xl py-5 text-gray-500">Portfolio </h3>
             <p className="text-md py-5 leading-8 text-gray-500 lg:text-xl  ">
@@ -205,14 +209,14 @@ export default function Home() {
             <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg ">
               <div className="relative">
                 <Image
-                  src={web1}
-                  alt="Project 1"
+                  src={lyrics}
+                  alt="Lyriks Music Streaming application"
                   className="rounded-md"
                   layout="responsive"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <a
-                    href="https://example.com"
+                    href="https://github.com/Frostdev7506/Lyriks"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
@@ -222,11 +226,11 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="text-2xl text-gray-500 font-medium my-2">
-                Project 1
+                Lyriks (Music Streaming application)
               </h2>
               <p className="text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+                Music streaming application created using React and Shazam-core
+                Api.
               </p>
             </div>
 
@@ -234,14 +238,14 @@ export default function Home() {
             <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
-                  src={web2}
-                  alt="Project 2"
+                  src={bootcamp}
+                  alt="Frontend-Webdevelopment-Bootcamp"
                   className="rounded-md"
                   layout="responsive"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <a
-                    href="https://example.com"
+                    href="https://github.com/Frostdev7506/Frontend-Webdevelopment-Bootcamp"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
@@ -251,26 +255,25 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="text-2xl text-gray-500 font-medium my-2">
-                Project 2
+                Web Development Bootcamp
               </h2>
               <p className="text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+                A landing Page for a Web-Development Bootcamp.
               </p>
             </div>
 
-            {/* card4*/}
+            {/* card3*/}
             <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
-                  src={web4}
-                  alt="Project 3"
+                  src={imagegenerator}
+                  alt="OpenAI Image Generator"
                   className="rounded-md"
                   layout="responsive"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <a
-                    href="https://example.com"
+                    href="https://github.com/Frostdev7506/open-AI-Image-Generator"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
@@ -280,25 +283,25 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="text-2xl text-gray-500 font-medium my-2">
-                Project 3
+                OpenAI Image Generator
               </h2>
               <p className="text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+                This is a simple image generator built with Node.js and Express
+                that uses OpenAI's Dall-E AI-model to generate images.
               </p>
             </div>
             {/* card4*/}
             <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
-                  src={web4}
-                  alt="Project 4"
+                  src={student}
+                  alt="Student Attendance Application"
                   className="rounded-md"
                   layout="responsive"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <a
-                    href="https://example.com"
+                    href="https://github.com/Frostdev7506/mern-crud-student-attendance"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
@@ -308,11 +311,11 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="text-2xl text-gray-500 font-medium my-2">
-                Project 4
+                Student Attendance Application
               </h2>
               <p className="text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                faucibus justo a augue sagittis, id venenatis risus tincidunt.
+                Web Application to do CRUD operations with student attendance.
+                Created using MERN stack.
               </p>
             </div>
             {/* card5*/}
