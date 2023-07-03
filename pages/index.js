@@ -287,7 +287,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-500">
                 This is a simple image generator built with Node.js and Express
-                that uses OpenAI's Dall-E AI-model to generate images.
+                that uses OpenAI Dall-E AI-model to generate images.
               </p>
             </div>
             {/* card4*/}
