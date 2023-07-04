@@ -16,6 +16,7 @@ import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import GitHubWidget from "../components/GitHubWidget";
+import TechnologyTags from "@/components/TechnologyTags";
 
 import web1 from "../public/web1.png";
 import lyrics from "../public/lyrics.png";
@@ -228,6 +229,12 @@ export default function Home() {
               <h2 className="text-2xl text-gray-500 font-medium my-2">
                 Lyriks (Music Streaming application)
               </h2>
+
+              <TechnologyTags
+                technologies={["React", "JavaScript", "API", "Express"]}
+                colors1={["green", "pink", "indigo", "cyan"]}
+                colors2={["purple", "red", "purple", "teal"]}
+              />
               <p className="text-gray-500">
                 Music streaming application created using React and Shazam-core
                 Api.
@@ -257,6 +264,11 @@ export default function Home() {
               <h2 className="text-2xl text-gray-500 font-medium my-2">
                 Web Development Bootcamp
               </h2>
+              <TechnologyTags
+                technologies={["React", "JavaScript", "Mapbox API", "Express"]}
+                colors1={["green", "pink", "indigo", "cyan"]}
+                colors2={["purple", "red", "purple", "teal"]}
+              />
               <p className="text-gray-500">
                 A landing Page for a Web-Development Bootcamp.
               </p>
@@ -285,6 +297,11 @@ export default function Home() {
               <h2 className="text-2xl text-gray-500 font-medium my-2">
                 OpenAI Image Generator
               </h2>
+              <TechnologyTags
+                technologies={["React", "JavaScript", "OpenAI", "Express"]}
+                colors1={["green", "pink", "indigo", "cyan"]}
+                colors2={["purple", "red", "purple", "teal"]}
+              />
               <p className="text-gray-500">
                 This is a simple image generator built with Node.js and Express
                 that uses OpenAI Dall-E AI-model to generate images.
@@ -313,6 +330,11 @@ export default function Home() {
               <h2 className="text-2xl text-gray-500 font-medium my-2">
                 Student Attendance Application
               </h2>
+              <TechnologyTags
+                technologies={["React", "JavaScript", "Mysql", "Express"]}
+                colors1={["green", "pink", "indigo", "cyan"]}
+                colors2={["purple", "red", "purple", "teal"]}
+              />
               <p className="text-gray-500">
                 Web Application to do CRUD operations with student attendance.
                 Created using MERN stack.
@@ -341,6 +363,11 @@ export default function Home() {
               <h2 className="text-2xl text-gray-500 font-medium my-2">
                 Project 5
               </h2>
+              <TechnologyTags
+                technologies={["React", "JavaScript", "API", "Express"]}
+                colors1={["green", "pink", "indigo", "cyan"]}
+                colors2={["purple", "red", "purple", "teal"]}
+              />
               <p className="text-gray-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
                 faucibus justo a augue sagittis, id venenatis risus tincidunt.
@@ -369,6 +396,11 @@ export default function Home() {
               <h2 className="text-2xl text-gray-500 font-medium my-2">
                 Project 6
               </h2>
+              <TechnologyTags
+                technologies={["React", "JavaScript", "API", "Express"]}
+                colors1={["green", "pink", "indigo", "cyan"]}
+                colors2={["purple", "red", "purple", "teal"]}
+              />
               <p className="text-gray-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
                 faucibus justo a augue sagittis, id venenatis risus tincidunt.
@@ -402,26 +434,26 @@ export default function Home() {
           <GitHubWidget />
         </section>
         {/* footer  */}
-        <footer class="p-4 mt-5 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
-          <div class="sm:flex sm:items-center sm:justify-between">
+        <footer className="p-4 mt-5 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
+          <div className="sm:flex sm:items-center sm:justify-between">
             <a
               href="https://github.com/Frostdev7506"
-              class="flex items-center mb-4 sm:mb-0"
+              className="flex items-center mb-4 sm:mb-0"
             >
-              <span class="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
                 <p className="text-xl text-gray-500 font-burtons ">
                   developedbyneeraj
                 </p>
               </span>
             </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+            <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
               <li>
-                <a href="#about" class="mr-4 hover:underline md:mr-6 ">
+                <a href="#about" className="mr-4 hover:underline md:mr-6 ">
                   About
                 </a>
               </li>
               <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">
+                <a href="#" className="mr-4 hover:underline md:mr-6">
                   Privacy Policy
                 </a>
               </li>
