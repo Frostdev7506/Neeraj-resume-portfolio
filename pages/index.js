@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+
 import { icons } from "react-icons";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -10,6 +11,10 @@ import {
 } from "react-icons/ai";
 
 import Iframe from "react-iframe";
+
+import { useState } from "react";
+
+import ClipLoader from "react-spinners/ClipLoader";
 
 import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 
@@ -37,10 +42,19 @@ import aws from "../public/aws.svg";
 import github from "../public/github.png";
 import js from "../public/javascript.png";
 
-import { useState } from "react";
+const override = {
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [documentstate, setDocumentState] = useState(true);
+
+  let handleIframeLoad = () => {
+    setDocumentState(false);
+  };
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -49,6 +63,7 @@ export default function Home() {
           name="description"
           content=" Portfolio website created with NextJS and Tailwind CSS"
         />
+
         <meta property="og:url" content="https://neerajbutola.netlify.app" />
         <meta property="og:type" content="website" />
         <meta
@@ -57,7 +72,6 @@ export default function Home() {
         />
         <meta name="keywords " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className=" bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-800">
@@ -415,13 +429,27 @@ export default function Home() {
             <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2 ">
               Resume Preview
             </h2>
-            <div className=" mx-10  lg:h-screen sm:h-screen">
+            <div className=" mx-10 lg:h-screen sm:h-screen ">
+              {documentstate && (
+                <ClipLoader
+                  color={"red"}
+                  loading={documentstate}
+                  size={400}
+                  width={"100"}
+                  css={override}
+                  height={"100"}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              )}
+
               <Iframe
                 className="lg:h-screen md:h-screen h-96 "
                 // src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
                 src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
                 frameBorder="2"
                 scrolling="auto"
+                onLoad={handleIframeLoad}
                 layout="responsive"
                 width={"100%"}
                 height={"100%"}
@@ -435,7 +463,7 @@ export default function Home() {
           <GitHubWidget />
         </section>
         {/* footer  */}
-        <footer className="p-4 mt-5 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
+        <footer className="p-4 mt-5 bg-white rounded-lg shadow-2xl md:px-6 md:py-8 dark:bg-gray-900">
           <div className="sm:flex sm:items-center sm:justify-between">
             <a
               href="https://github.com/Frostdev7506"
