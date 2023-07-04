@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Octokit } from "octokit";
+import TechnologyTags from "./TechnologyTags";
 
+const defaultTechnology = "GitHub";
 const GitHubWidget = () => {
   const [repos, setRepos] = useState([]);
 
@@ -17,24 +20,67 @@ const GitHubWidget = () => {
       });
   }, []);
 
+  const getLanguages = async (repoName) => {
+    const octokit = new Octokit({
+      auth: "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",
+    });
+
+    try {
+      const response = await octokit.request(
+        "GET /repos/{owner}/{repo}/languages",
+        {
+          owner: "Frostdev7506",
+          repo: repoName,
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        }
+      );
+
+      return Object.keys(response.data);
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    // Fetch languages for each repository
+    const fetchLanguages = async () => {
+      const reposWithLanguages = await Promise.all(
+        repos.map(async (repo) => {
+          const languages = await getLanguages(repo.name);
+          return {
+            ...repo,
+            languages,
+          };
+        })
+      );
+
+      setRepos(reposWithLanguages);
+    };
+
+    fetchLanguages();
+  }, [repos]);
+
   return (
     <div className="container mx-auto">
       <h1 className="text-4xl text-gray-500 font-bold text-center mt-8">
         Github Repositories
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         {repos.map((repo) => (
           <div
             key={repo.id}
-            className="bg-white text-gray-500 dark:bg-gray-800 p-4 rounded-lg shadow"
+            className="bg-white text-gray-500 dark:bg-gray-800 p-2 rounded-lg shadow"
           >
             <h2 className="text-2xl font-bold">{repo.name}</h2>
 
             <div>
               {repo.description ? (
-                <p className="m-4">{repo.description}</p>
+                <p className="m-2">{repo.description}</p>
               ) : (
-                <p className="m-4">
+                <p className="m-2">
                   Click on{" "}
                   <a
                     href={repo.html_url}
@@ -44,6 +90,25 @@ const GitHubWidget = () => {
                   </a>{" "}
                   button to view the repository on GitHub for {repo.name}
                 </p>
+              )}
+            </div>
+            <div className=" p-2">
+              {repo.languages && repo.languages.length > 0 ? (
+                <div className="mt-2">
+                  <TechnologyTags
+                    technologies={repo.languages}
+                    colors1={Array(repo.languages.length).fill("cyan")}
+                    colors2={Array(repo.languages.length).fill("teal")}
+                  />
+                </div>
+              ) : (
+                <div className="mt-2">
+                  <TechnologyTags
+                    technologies={["GitHub"]}
+                    colors1={["cyan"]}
+                    colors2={["teal"]}
+                  />
+                </div>
               )}
             </div>
 

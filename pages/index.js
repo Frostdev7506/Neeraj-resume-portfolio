@@ -16,7 +16,7 @@ import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import GitHubWidget from "../components/GitHubWidget";
-import TechnologyTags from "@/components/TechnologyTags";
+import TechnologyTags from "../components/TechnologyTags";
 
 import web1 from "../public/web1.png";
 import lyrics from "../public/lyrics.png";
@@ -232,8 +232,8 @@ export default function Home() {
 
               <TechnologyTags
                 technologies={["React", "JavaScript", "API", "Express"]}
-                colors1={["green", "pink", "indigo", "cyan"]}
-                colors2={["purple", "red", "purple", "teal"]}
+                colors1={["cyan", "cyan", "cyan", "cyan"]}
+                colors2={["teal", "teal", "teal", "teal"]}
               />
               <p className="text-gray-500">
                 Music streaming application created using React and Shazam-core
@@ -266,8 +266,8 @@ export default function Home() {
               </h2>
               <TechnologyTags
                 technologies={["React", "JavaScript", "Mapbox API", "Express"]}
-                colors1={["green", "pink", "indigo", "cyan"]}
-                colors2={["purple", "red", "purple", "teal"]}
+                colors1={["cyan", "cyan", "cyan", "cyan"]}
+                colors2={["teal", "teal", "teal", "teal"]}
               />
               <p className="text-gray-500">
                 A landing Page for a Web-Development Bootcamp.
@@ -299,8 +299,8 @@ export default function Home() {
               </h2>
               <TechnologyTags
                 technologies={["React", "JavaScript", "OpenAI", "Express"]}
-                colors1={["green", "pink", "indigo", "cyan"]}
-                colors2={["purple", "red", "purple", "teal"]}
+                colors1={["cyan", "cyan", "cyan", "cyan"]}
+                colors2={["teal", "teal", "teal", "teal"]}
               />
               <p className="text-gray-500">
                 This is a simple image generator built with Node.js and Express
@@ -332,8 +332,8 @@ export default function Home() {
               </h2>
               <TechnologyTags
                 technologies={["React", "JavaScript", "Mysql", "Express"]}
-                colors1={["green", "pink", "indigo", "cyan"]}
-                colors2={["purple", "red", "purple", "teal"]}
+                colors1={["cyan", "cyan", "cyan", "cyan"]}
+                colors2={["teal", "teal", "teal", "teal"]}
               />
               <p className="text-gray-500">
                 Web Application to do CRUD operations with student attendance.
@@ -365,8 +365,8 @@ export default function Home() {
               </h2>
               <TechnologyTags
                 technologies={["React", "JavaScript", "API", "Express"]}
-                colors1={["green", "pink", "indigo", "cyan"]}
-                colors2={["purple", "red", "purple", "teal"]}
+                colors1={["cyan", "cyan", "cyan", "cyan"]}
+                colors2={["teal", "teal", "teal", "teal"]}
               />
               <p className="text-gray-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -398,8 +398,8 @@ export default function Home() {
               </h2>
               <TechnologyTags
                 technologies={["React", "JavaScript", "API", "Express"]}
-                colors1={["green", "pink", "indigo", "cyan"]}
-                colors2={["purple", "red", "purple", "teal"]}
+                colors1={["cyan", "cyan", "cyan", "cyan"]}
+                colors2={["teal", "teal", "teal", "teal"]}
               />
               <p className="text-gray-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -418,7 +418,8 @@ export default function Home() {
             <div className=" mx-10  lg:h-screen sm:h-screen">
               <Iframe
                 className="lg:h-screen md:h-screen h-96 "
-                src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
+                // src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
+                src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
                 frameBorder="2"
                 scrolling="auto"
                 layout="responsive"

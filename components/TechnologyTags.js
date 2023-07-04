@@ -1,6 +1,7 @@
 import React from "react";
 
 const TechnologyTags = ({ technologies, colors1, colors2 }) => {
+  technologies.map((technology, index) => console.log(colors1));
   return (
     <div className="flex justify-start mt-4 pt-2 pb-2 space-x-2">
       {technologies.map((technology, index) => (
