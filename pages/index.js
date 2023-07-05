@@ -391,7 +391,7 @@ export default function Home() {
             <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
-                  src={web6}
+                  src={web3}
                   alt="Project 6"
                   className="rounded-md"
                   layout="responsive"
@@ -429,19 +429,21 @@ export default function Home() {
             <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2 ">
               Resume Preview
             </h2>
-            <div className=" mx-10 lg:h-screen sm:h-screen ">
-              {documentstate && (
-                <ClipLoader
-                  color={"red"}
-                  loading={documentstate}
-                  size={400}
-                  width={"100"}
-                  css={override}
-                  height={"100"}
-                  aria-label="Loading Spinner"
-                  data-testid="loader"
-                />
-              )}
+            <div className=" mx-10  lg:h-screen sm:h-screen  ">
+              <div className="flex mt-8 items-center justify-center">
+                {documentstate && (
+                  <ClipLoader
+                    color={"red"}
+                    loading={documentstate}
+                    size={300}
+                    width={"100%"}
+                    css={override}
+                    height={"100%"}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                  />
+                )}
+              </div>
 
               <Iframe
                 className="lg:h-screen md:h-screen h-96 "

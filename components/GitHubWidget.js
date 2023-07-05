@@ -76,9 +76,9 @@ const GitHubWidget = () => {
 
             <div>
               {repo.description ? (
-                <p className="m-2">{repo.description}</p>
+                <p className="m-1">{repo.description}</p>
               ) : (
-                <p className="m-2">
+                <p className="m-1">
                   Click on{" "}
                   <a
                     href={repo.html_url}
@@ -111,12 +111,14 @@ const GitHubWidget = () => {
             </div>
 
             <div>
-              <a
-                href={repo.html_url}
-                className="text-blue-500 m-2 hover:underline"
-              >
-                View on GitHub
-              </a>
+              <button class="bg-transparent  text-teal-700 font-semibold hover:text-white py-2 px-2 m-1 border border-teal-500 hover:border-transparent rounded">
+                <a
+                  href={repo.html_url}
+                  className="text-teal-500 m-2 hover:underline"
+                >
+                  View on GitHub
+                </a>
+              </button>
             </div>
           </div>
         ))}
