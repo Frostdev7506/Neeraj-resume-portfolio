@@ -7,7 +7,7 @@ const TechnologyTags = ({ technologies, colors1, colors2 }) => {
       {technologies.map((technology, index) => (
         <span
           key={index}
-          className={`bg-gradient-to-r from-${colors1[index]}-500 to-${colors2[index]}-500 border-y-${colors1[index]}-500 px-2 py-1 rounded-md text-sm text-white`}
+          className={`bg-gradient-to-r from-${colors1[index]}-500 to-${colors2[index]}-500 border-y-${colors1[index]}-500 px-2 py-1  rounded-md text-sm text-white`}
         >
           {technology}
         </span>

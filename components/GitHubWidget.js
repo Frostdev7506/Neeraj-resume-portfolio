@@ -90,9 +90,9 @@ const GitHubWidget = () => {
                 </p>
               )}
             </div>
-            <div className=" p-2">
+            <div className=" p-2 overflow-auto">
               {repo.languages && repo.languages.length > 0 ? (
-                <div className="mt-2">
+                <div className="mt-2 ">
                   <TechnologyTags
                     technologies={repo.languages}
                     colors1={Array(repo.languages.length).fill("cyan")}
