@@ -90,7 +90,7 @@ const GitHubWidget = () => {
                 </p>
               )}
             </div>
-            <div className=" p-2 overflow-auto">
+            <div className=" p-2 flex-wrap ">
               {repo.languages && repo.languages.length > 0 ? (
                 <div className="mt-2 ">
                   <TechnologyTags
