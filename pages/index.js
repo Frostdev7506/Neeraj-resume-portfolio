@@ -7,6 +7,7 @@ import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillYoutube,
+  AiOutlineMail,
   AiFillGithub,
 } from "react-icons/ai";
 
@@ -21,6 +22,7 @@ import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import GitHubWidget from "../components/GitHubWidget";
+import ContactForm from "../components/ContactForm";
 import TechnologyTags from "../components/TechnologyTags";
 
 import web1 from "../public/web1.png";
@@ -41,6 +43,8 @@ import mysql from "../public/mysql.svg";
 import aws from "../public/aws.svg";
 import github from "../public/github.png";
 import js from "../public/javascript.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const override = {
   margin: "0 auto",
@@ -124,10 +128,17 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/neeraj-butola/">
               <AiFillLinkedin />
             </a>
+            <a href="#contactme">
+              <AiOutlineMail/>
+            </a>
           </div>
           <div className=" relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
             <Image src={deved} layout="fill" objectFit="cover" />
           </div>
+        </section>
+
+        <section>
+
         </section>
 
         <section>
@@ -143,7 +154,7 @@ export default function Home() {
         </section>
 
         <section>
-          <div className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
+          <div className=" py-8 dark:bg-gray-800 mt-10">
             <div className="container mx-auto">
               <h2 className=" text-3xl py-5 mb-8  text-gray-500 ">
                 Technology Stack
@@ -460,10 +471,23 @@ export default function Home() {
           </div>
         </section>
 
+
+
+
+
         {/* github widget */}
         <section>
           <GitHubWidget />
         </section>
+
+{/* Contact Me  */}
+
+<section id="contactme">
+<ContactForm/>
+<ToastContainer />
+
+</section>
+
         {/* footer  */}
         <footer className="p-4 mt-5 bg-white rounded-lg shadow-2xl md:px-6 md:py-8 dark:bg-gray-900">
           <div className="sm:flex sm:items-center sm:justify-between">
@@ -490,7 +514,7 @@ export default function Home() {
               </li>
 
               <li>
-                <a href="#contact" className="hover:underline">
+                <a href="#contactme" className="hover:underline">
                   Contact
                 </a>
               </li>
