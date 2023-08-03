@@ -4,6 +4,7 @@
 
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import {  toast } from 'react-toastify';
 
 
 const ContactForm = () => {
@@ -44,7 +45,7 @@ const ContactForm = () => {
 
 <div className='ContactForm  mt-20 mb-20'>
 <h1 className="text-4xl text-gray-500   mt-8 mb-10">Contact Me</h1>
-<form autocomplete="off" className='mt-5' ref={form} onSubmit={sendEmail}>
+<form autoComplete="off" className='mt-5' ref={form} onSubmit={sendEmail}>
 
       <div className="mb-4">
         <label className="block text-gray-500 text-m font-bold mb-2">
