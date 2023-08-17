@@ -1,6 +1,5 @@
 import { getPostBySlug, getPosts } from '../../lib/mdx';
-import MdxRenderer from './MdxRenderer'; 
-import ReactMarkdown from 'react-markdown'
+
 import MarkdownRenderer from './MarkdownRenderer';
  import Footer from '../../components/Footer'; 
 
