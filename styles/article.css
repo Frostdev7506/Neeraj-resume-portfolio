@@ -1,0 +1,19 @@
+/* MarkdownStyles.css */
+.custom-markdown h1 {
+    font-size: 1.8em; 
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .custom-markdown h2 {
+    font-size: 1.2em; 
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .custom-markdown h3 {
+    font-size: 1.em; 
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  

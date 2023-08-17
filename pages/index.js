@@ -139,6 +139,16 @@ export default function Home() {
 
         <section>
 
+
+{/* Button to the Blog Page */}
+<div className="flex justify-center mt-6">
+  <Link href="/blog">
+    <button className="bg-teal-500 text-white px-6 py-3 rounded-md hover:bg-teal-600">
+      Visit Blog
+    </button>
+  </Link>
+</div>
+
         </section>
 
         <section>
