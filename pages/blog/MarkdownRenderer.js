@@ -22,23 +22,28 @@ const MarkdownRenderer = ({ content }) => {
       className="custom-markdown"
   
       components={{
-        code({node, inline, className, children, ...props}) {
-          const match = /language-(\w+)/.exec(className || '')
-          return !inline && match ? (
-            <DynamicSyntaxHighlighter
-              {...props}
-              children={String(children).replace(/\n$/, '')}
-            
-              language={match[1]}
-              PreTag="div"
-            />
-          ) : (
-            <code {...props} className={className}>
-              {children}
-            </code>
-          )
+        code({ node, inline, className, children, ...props }) {
+          const match = /language-(\w+)/.exec(className || '');
+          if (!inline && match) {
+            return (
+              <DynamicSyntaxHighlighter
+                {...props}
+                language={match[1]}
+                PreTag="div"
+              >
+                {String(children).replace(/\n$/, '')}
+              </DynamicSyntaxHighlighter>
+            );
+          } else {
+            return (
+              <code {...props} className={className}>
+                {children}
+              </code>
+            );
+          }
         }
       }}
+      
       remarkPlugins={[remarkGfm]}
     >
       {sanitizedContent}
