@@ -1,4 +1,10 @@
-MarkdownStyles.css
+
+
+*{
+  margin: 2;
+}
+
+
 .custom-markdown h1 {
     font-size: 1.8em; 
     margin-bottom: 10px;
@@ -17,3 +23,16 @@ MarkdownStyles.css
     margin-top: 10px;
   }
   
+  
+/* Styling for all <a> tags */
+.custom-markdown a {
+   /* Set your desired color */
+  /* Add underline to links */
+
+  color: darkcyan;
+}
+
+.custom-markdown a:hover{
+  color: rgb(93, 93, 236);
+  text-decoration: underline;
+}

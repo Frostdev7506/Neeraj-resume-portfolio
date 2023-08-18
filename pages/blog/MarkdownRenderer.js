@@ -1,6 +1,13 @@
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import dynamic from 'next/dynamic';
+import { useDarkMode } from '../../context/DarkModeContext';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { paraisoLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { stackoverflowLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { stackoverflowDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+
 
 
 
@@ -10,8 +17,12 @@ const DynamicSyntaxHighlighter = dynamic(
 );
 
 const MarkdownRenderer = ({ content }) => {
+
+  const { darkMode, setDarkMode } = useDarkMode();
+ 
+
   if (!content) {
-    return null; // or some fallback content if needed
+    return null; 
   }
 
   const sanitizedContent = content.replace(/\r\n/g, '\n');
@@ -20,19 +31,23 @@ const MarkdownRenderer = ({ content }) => {
   return (
     <ReactMarkdown
       className="custom-markdown"
-  
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '');
           if (!inline && match) {
             return (
-              <DynamicSyntaxHighlighter
-                {...props}
-                language={match[1]}
-                PreTag="div"
-              >
-                {String(children).replace(/\n$/, '')}
-              </DynamicSyntaxHighlighter>
+              <div className="syntax-highlighter-wrapper">
+             
+               
+                <SyntaxHighlighter
+                  language={match[1]}
+                  style={darkMode ? stackoverflowDark : stackoverflowLight}
+                  PreTag="div"
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              </div>
             );
           } else {
             return (
@@ -41,13 +56,12 @@ const MarkdownRenderer = ({ content }) => {
               </code>
             );
           }
-        }
+        },
       }}
-      
       remarkPlugins={[remarkGfm]}
     >
       {sanitizedContent}
-      </ReactMarkdown>
+    </ReactMarkdown>
   );
 };
 
