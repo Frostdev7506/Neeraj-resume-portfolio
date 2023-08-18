@@ -13,7 +13,7 @@ import {
 
 import Iframe from "react-iframe";
 
-import { useState } from "react";
+import { useState,createContext, useContext, } from "react";
 
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -47,13 +47,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Footer from '../components/Footer'; 
 
+import { useDarkMode } from '../context/DarkModeContext';
+
 const override = {
   margin: "0 auto",
   borderColor: "red",
 };
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, setDarkMode } = useDarkMode();
+
   const [documentstate, setDocumentState] = useState(true);
 
   let handleIframeLoad = () => {

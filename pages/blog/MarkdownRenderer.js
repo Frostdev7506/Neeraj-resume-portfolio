@@ -1,5 +1,13 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import dynamic from 'next/dynamic';
+
+
+
+const DynamicSyntaxHighlighter = dynamic(
+  () => import('react-syntax-highlighter'),
+  { ssr: false }
+);
 
 const MarkdownRenderer = ({ content }) => {
   if (!content) {
@@ -7,16 +15,32 @@ const MarkdownRenderer = ({ content }) => {
   }
 
   const sanitizedContent = content.replace(/\r\n/g, '\n');
-  console.log("sanitizedContent", sanitizedContent);
+  const markdown = `# **Just** a link:[ https://reactjs.com](https://reactjs.com).`;
 
   return (
     <ReactMarkdown
       className="custom-markdown"
-      components={{}} 
+      children={sanitizedContent}
+      components={{
+        code({node, inline, className, children, ...props}) {
+          const match = /language-(\w+)/.exec(className || '')
+          return !inline && match ? (
+            <DynamicSyntaxHighlighter
+              {...props}
+              children={String(children).replace(/\n$/, '')}
+            
+              language={match[1]}
+              PreTag="div"
+            />
+          ) : (
+            <code {...props} className={className}>
+              {children}
+            </code>
+          )
+        }
+      }}
       remarkPlugins={[remarkGfm]}
-    >
-      {sanitizedContent}
-    </ReactMarkdown>
+    />
   );
 };
 

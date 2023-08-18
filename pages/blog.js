@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { getPosts } from '../lib/mdx';
 import Footer from '../components/Footer'; 
+import { useState,createContext, useContext, } from "react";
+import { useDarkMode } from '../context/DarkModeContext';
 
 export async function getStaticProps() {
   const posts = getPosts().map((post) => ({
@@ -20,9 +22,10 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ posts }) {
+  const { darkMode, setDarkMode } = useDarkMode();
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="flex-grow">
+    <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''} dark:bg-gray-800`}>
+      <div className="bg-white flex-grow dark:bg-gray-800">
         <div className="flex flex-col items-center justify-center h-full px-10 md:px-20 lg:px-40 py-10 md:py-20 lg:py-32">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white mb-10">
             My Blogs
@@ -31,7 +34,7 @@ export default function Blog({ posts }) {
             {posts.map((post, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center bg-white dark:bg-gray-700 p-6 rounded-md shadow-md"
+                className="flex flex-col items-center justify-center bg-white  p-6 rounded-md shadow-md dark:bg-gray-800"
               >
                 <Link href={`/blog/${post.frontmatter.slug}`}>
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-teal-500 dark:text-teal-300 cursor-pointer hover:underline">
@@ -50,7 +53,7 @@ export default function Blog({ posts }) {
           </div>
         </div>
       </div>
-<div className='ml-8 mr-8'>
+<div className=' bg-white dark:bg-gray-800'>
 <Footer />
 </div>
  

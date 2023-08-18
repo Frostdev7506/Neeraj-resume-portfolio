@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="p-4 mt-5 bg-white rounded-lg shadow-2xl md:px-6 md:py-8 dark:bg-gray-900">
+    <footer className="p-4 mt-5 bg-white rounded-lg shadow-2xl md:px-6 md:py-8 dark:bg-gray-800">
       <div className="sm:flex sm:items-center sm:justify-between">
         <Link href="https://github.com/Frostdev7506" className="flex items-center mb-4 sm:mb-0">
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
