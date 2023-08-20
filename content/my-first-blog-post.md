@@ -26,8 +26,13 @@ Here's an example of an ordered list:
 - Item 4
 
 
+
+
+
+
+
 * Lists
-* [x] todo
+* [ ] todo
 * [x] done
 
 
@@ -52,7 +57,15 @@ You can also add links to your content:
 
 # Blockquotes
 
-> This is a blockquote. It's used to highlight a quote or important information.
+> A block quote 
+
+> This is a blockquote.
+> It can span multiple lines.
+
+
+ ~strikethrough~ 
+
+URL: https://reactjs.org.
 
 
 <!--
@@ -298,12 +311,13 @@ const markdown = `A paragraph with *emphasis* and **strong importance**.
 * Lists
 * [ ] todo
 * [x] done
-
+`
 A table:
 
-| a | b |
-| - | - |
 `
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |`
+
 
 ReactDom.render(
   <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />,

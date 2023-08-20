@@ -29,6 +29,8 @@ const MarkdownRenderer = ({ content }) => {
   const markdown = `# **Just** a link:[ https://reactjs.com](https://reactjs.com).`;
 
   return (
+    <div>
+  
     <ReactMarkdown
       className="custom-markdown"
       components={{
@@ -62,6 +64,7 @@ const MarkdownRenderer = ({ content }) => {
     >
       {sanitizedContent}
     </ReactMarkdown>
+    </div>
   );
 };
 
