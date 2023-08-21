@@ -2,6 +2,7 @@
 title: My First Blog Post
 date: 2023-08-01
 slug: my-first-blog-post
+readtime: 10 minutes
 ---
 
 # My First Blog Post
