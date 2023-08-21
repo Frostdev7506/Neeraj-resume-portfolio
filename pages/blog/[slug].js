@@ -86,7 +86,7 @@ export default function BlogPost({ post }) {
             
           <div className="flex  justify-start max-w-5xl ">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-teal-600">
-                {post.frontmatter.title} hey there hww are toiy what up?
+                {post.frontmatter.title} 
               </h2>
 
 
