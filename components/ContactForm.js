@@ -39,13 +39,16 @@ const ContactForm = () => {
           }
         );
     }
+    else {
+      toast.error('Message Not Sent ');
+    }
   };
 
   return (
 
-<div className='ContactForm  mt-20 mb-20'>
-<h1 className="text-4xl text-gray-500   mt-8 mb-10">Contact Me</h1>
-<form autoComplete="off" className='mt-5' ref={form} onSubmit={sendEmail}>
+    <div className='ContactForm mt-20 mb-20 bg-gray-50 dark:bg-gray-700 p-10 rounded-lg shadow-md max-w-10xl mx-auto'>
+    <h1 className="text-4xl text-gray-500 mt-8 mb-10">Contact Me</h1>
+    <form autoComplete="off" className='mt-5' ref={form} onSubmit={sendEmail}>
 
       <div className="mb-4">
         <label className="block text-gray-500 text-m font-bold mb-2">
@@ -86,7 +89,7 @@ const ContactForm = () => {
         )}
       </div>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="bg-gradient-to-r from-teal-400 to-cyan-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         type="submit"
       >
         Send
@@ -98,3 +101,8 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+
+function checkProfanity(input){
+
+}
