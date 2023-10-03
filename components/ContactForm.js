@@ -5,6 +5,11 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import {  toast } from 'react-toastify';
+// YourComponent.js
+import { checkNameInput, checkEmailInput, checkMessageInput } from './formInputChecks';
+
+// Now you can use these functions in your component
+
 
 
 const ContactForm = () => {
@@ -14,30 +19,36 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!form.current.user_name.value) newErrors.name = 'Name is required';
-    if (!form.current.user_email.value) newErrors.email = 'Email is required';
-    if (!form.current.message.value) newErrors.message = 'Message is required';
+    newErrors.name= checkNameInput(form.current.user_name.value,newErrors.name)
+    // if (!form.current.user_name.value) newErrors.name = 'Name is required';
+
+   newErrors.email= checkEmailInput(form.current.user_email.value,newErrors.email)
+    // if (!form.current.user_email.value) newErrors.email = 'Email is required';
+
+    newErrors.message= checkMessageInput(form.current.message.value,newErrors.message)
+    // if (!form.current.message.value) newErrors.message = 'Message is required';
+
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      emailjs
-      .sendForm(
-        //   'YOUR_SERVICE_ID'
-          'service_3o1d0nz',
-        //   'YOUR_TEMPLATE_ID'
-          'template_xs38dyk',
-          form.current,
-        //   'YOUR_PUBLIC_KEY'
-        'f8sriYXEwzKXsNCrU'
-        )
-        .then(
-          (result) => {
-            toast.success('Message sent successfully!');
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      // emailjs
+      // .sendForm(
+      //   //   'YOUR_SERVICE_ID'
+      //     'service_3o1d0nz',
+      //   //   'YOUR_TEMPLATE_ID'
+      //     'template_xs38dyk',
+      //     form.current,
+      //   //   'YOUR_PUBLIC_KEY'
+      //   'f8sriYXEwzKXsNCrU'
+      //   )
+      //   .then(
+      //     (result) => {
+      //       toast.success('Message sent successfully!');
+      //       console.log(result.text);
+      //     },
+      //     (error) => {
+      //       console.log(error.text);
+      //     }
+      //   ); 
     }
     else {
       toast.error('Message Not Sent ');
@@ -103,6 +114,3 @@ const ContactForm = () => {
 export default ContactForm;
 
 
-function checkProfanity(input){
-
-}
