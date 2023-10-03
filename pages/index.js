@@ -23,7 +23,9 @@ import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import GitHubWidget from "../components/GitHubWidget";
 import ContactForm from "../components/ContactForm";
+import TechStackCards from "@/components/TechStackCards";
 import TechnologyTags from "../components/TechnologyTags";
+import PdfShare from "../components/PdfShare";
 
 import web1 from "../public/web1.png";
 import lyrics from "../public/lyrics.png";
@@ -62,6 +64,9 @@ export default function Home() {
   let handleIframeLoad = () => {
     setDocumentState(false);
   };
+
+
+
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -166,70 +171,24 @@ export default function Home() {
             </p>
           </div>
         </section>
-
+ {/* section 2  */}
         <section>
-          <div className=" py-8 dark:bg-gray-800 mt-10">
-            <div className="container mx-auto">
-              <h2 className=" text-3xl py-5 mb-8  text-gray-500 ">
-                Technology Stack
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* react */}
-                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800 ">
-                  <Image
-                    src={react}
-                    alt="React"
-                    className="h-20 mx-auto mb-4"
-                  />
-                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
-                    React.js
-                  </h3>
-                  <p className="text-gray-600">
-                    A JavaScript library for building user interfaces.
-                  </p>
-                </div>
-                {/* nodejs  */}
-                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
-                  <Image
-                    src={node}
-                    alt="Nodejs"
-                    className="h-20 mx-auto mb-4"
-                  />
-                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
-                    Nodejs
-                  </h3>
-                  <p className="text-gray-600">
-                    JavaScript runtime for server-side applications.
-                  </p>
-                </div>
-                {/* mysql */}
-                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
-                  <Image
-                    src={mysql}
-                    alt="Mysql"
-                    className="h-20 mx-auto mb-4"
-                  />
-                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
-                    Mysql
-                  </h3>
-                  <p className="text-gray-600">
-                    Open-source relational database management system.
-                  </p>
-                </div>
-                {/* AWS */}
-                <div className="bg-white rounded-lg p-6 shadow-md dark:bg-gray-800">
-                  <Image src={aws} alt="Aws" className="h-20 mx-auto mb-4" />
-                  <h3 className="text-xl text-gray-500 font-semibold mb-2 dark:text-white">
-                    AWS
-                  </h3>
-                  <p className="text-gray-600">
-                    Comprehensive cloud computing platform by Amazon.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div className="py-8 dark:bg-gray-800 mt-10">
+        <div className="container mx-auto">
+          <h2 className="text-3xl py-5 mb-8 text-gray-500">Technology Stack</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {techStackData.map((tech, index) => (
+              <TechStackCards
+                key={index}
+                imageUrl={tech.imageUrl}
+                title={tech.title}
+                description={tech.description}
+              />
+            ))}
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
         {/* section 3  */}
         <section className="mt-5">
           <div>
@@ -451,11 +410,16 @@ export default function Home() {
         {/* Resume section */}
         <section>
           <div className=" dark:bg-gray-800">
-            <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2 ">
-              Resume Preview
-            </h2>
+          <div className="flex flex-row justify-between">
+  <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2">
+    Resume Preview
+  </h2 >
+  <PdfShare pdfUrl={'https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf'} />
+</div>
+
+          
             <div className=" mx-10  lg:h-screen sm:h-screen  ">
-              <div className="flex mt-8 items-center justify-center">
+              <div className="flex mt-8 items-center justify-center ">
                 {documentstate && (
                   <ClipLoader
                     color={"red"}
@@ -508,3 +472,29 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+const techStackData = [
+  {
+    imageUrl: react, // Replace with the actual path
+    title: 'React.js',
+    description: 'A JavaScript library for building user interfaces.',
+  },
+  {
+    imageUrl: node, // Replace with the actual path
+    title: 'Node.js',
+    description: 'JavaScript runtime for server-side applications.',
+  },
+  {
+    imageUrl: mysql, // Replace with the actual path
+    title: 'Mysql',
+    description: 'Open-source relational database management system.',
+  },
+  {
+    imageUrl:aws, // Replace with the actual path
+    title: 'AWS',
+    description: 'Comprehensive cloud computing platform by Amazon.',
+  },
+];
