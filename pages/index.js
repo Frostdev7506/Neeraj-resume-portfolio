@@ -414,7 +414,11 @@ export default function Home() {
   <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2">
     Resume Preview
   </h2 >
+
+  <div className="">
   <PdfShare pdfUrl={'https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf'} />
+
+  </div>
 </div>
 
           
