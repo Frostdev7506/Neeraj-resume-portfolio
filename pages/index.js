@@ -416,7 +416,7 @@ export default function Home() {
   </h2 >
 
   <div className="">
-  <PdfShare pdfUrl={'https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf'} />
+  <PdfShare pdfUrl={'https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf'} />
 
   </div>
 </div>
