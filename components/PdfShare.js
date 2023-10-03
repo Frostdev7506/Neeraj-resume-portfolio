@@ -3,21 +3,12 @@ import React from 'react';
 const PdfShare = ({ pdfUrl }) => {
   const handleShareClick = async () => {
     try {
-      // Fetch the PDF file and convert it to a data URL (base64-encoded)
-      const response = await fetch(pdfUrl);
-      const blob = await response.blob();
-      const dataUrl = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result);
-        reader.readAsDataURL(blob);
-      });
-
-      // Share the PDF data URL using the Web Share API
       if (navigator.share) {
+        // Share the PDF URL directly using the Web Share API
         await navigator.share({
           title: 'PDF Viewer',
-          text: 'Hi, kindly check my resume ',
-          url: dataUrl,
+          text: 'Hi, kindly check this resume ',
+          url: pdfUrl, // Share the PDF URL
         });
       } else {
         alert('Web Share API is not supported in this browser.');
