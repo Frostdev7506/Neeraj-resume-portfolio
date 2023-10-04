@@ -4,7 +4,7 @@ import { useDarkMode } from '../context/DarkModeContext';
 
 const Footer = () => {
   return (
-    <footer className="p-4 px-5 mt-5  bg-white rounded-lg shadow-lg  shadow-gray-500/50 md:px-6 md:py-8 dark:bg-gray-800">
+    <footer className="p-4 px-5 mt-5  bg-gray-100 rounded-lg shadow-lg  shadow-gray-500/50 md:px-6 md:py-8 dark:bg-gray-800">
       <div className="sm:flex sm:items-center sm:justify-between dark:bg-gray-800">
         <Link href="https://github.com/Frostdev7506" className="flex items-center mb-4 sm:mb-0">
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">

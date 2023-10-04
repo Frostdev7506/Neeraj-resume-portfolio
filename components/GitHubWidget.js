@@ -65,12 +65,12 @@ const GitHubWidget = () => {
 
   return (
     <div className="container mt-5 mx-auto">
-      <h1 className="text-4xl text-gray-500   mt-8">Github Repositories</h1>
+      <h1 className="text-4xl text-gray-500  my-2 lg:py-5 sm:py-2 md:py-2  mt-8">Github Repositories</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         {repos.map((repo) => (
           <div
             key={repo.id}
-            className="bg-white text-gray-500 dark:bg-gray-800 p-2 rounded-lg shadow"
+            className="bg-gray-100 text-black   p-5 rounded-lg shadow-xl dark:bg-gray-700 "
           >
             <h2 className="text-2xl font-bold">{repo.name}</h2>
 

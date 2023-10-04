@@ -30,25 +30,25 @@ const ContactForm = () => {
 
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      // emailjs
-      // .sendForm(
-      //   //   'YOUR_SERVICE_ID'
-      //     'service_3o1d0nz',
-      //   //   'YOUR_TEMPLATE_ID'
-      //     'template_xs38dyk',
-      //     form.current,
-      //   //   'YOUR_PUBLIC_KEY'
-      //   'f8sriYXEwzKXsNCrU'
-      //   )
-      //   .then(
-      //     (result) => {
-      //       toast.success('Message sent successfully!');
-      //       console.log(result.text);
-      //     },
-      //     (error) => {
-      //       console.log(error.text);
-      //     }
-      //   ); 
+      emailjs
+      .sendForm(
+        //   'YOUR_SERVICE_ID'
+          'service_3o1d0nz',
+        //   'YOUR_TEMPLATE_ID'
+          'template_xs38dyk',
+          form.current,
+        //   'YOUR_PUBLIC_KEY'
+        'f8sriYXEwzKXsNCrU'
+        )
+        .then(
+          (result) => {
+            toast.success('Message sent successfully!');
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        ); 
     }
     else {
       toast.error('Message Not Sent ');
@@ -57,7 +57,7 @@ const ContactForm = () => {
 
   return (
 
-    <div className='ContactForm mt-20 mb-20 bg-gray-50 dark:bg-gray-700 p-10 rounded-lg shadow-md max-w-10xl mx-auto'>
+    <div className='ContactForm mt-20 mb-20 bg-gray-100 dark:bg-gray-700 p-10 rounded-lg shadow-xl max-w-10xl mx-auto'>
     <h1 className="text-4xl text-gray-500 mt-8 mb-10">Contact Me</h1>
     <form autoComplete="off" className='mt-5' ref={form} onSubmit={sendEmail}>
 

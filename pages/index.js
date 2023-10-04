@@ -205,7 +205,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap  justify-center items-center">
             {/* card1 */}
-            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg ">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg ">
               <div className="relative">
                 <Image
                   src={lyrics}
@@ -240,7 +240,7 @@ export default function Home() {
             </div>
 
             {/* card2 */}
-            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
                   src={bootcamp}
@@ -273,7 +273,7 @@ export default function Home() {
             </div>
 
             {/* card3*/}
-            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
                   src={imagegenerator}
@@ -306,7 +306,7 @@ export default function Home() {
               </p>
             </div>
             {/* card4*/}
-            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
                   src={student}
@@ -339,7 +339,7 @@ export default function Home() {
               </p>
             </div>
             {/* card5*/}
-            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
                   src={web5}
@@ -372,7 +372,7 @@ export default function Home() {
               </p>
             </div>
             {/* card6*/}
-            <div className=" basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
               <div className="relative">
                 <Image
                   src={web3}
@@ -409,9 +409,9 @@ export default function Home() {
 
         {/* Resume section */}
         <section>
-          <div className=" dark:bg-gray-800">
+          <div className=" bg-white px-10 py-10 rounded-lg dark:bg-gray-800">
           <div className="flex flex-row justify-between">
-  <h2 className="text-3xl text-gray-500 my-2 lg:py-5 sm:py-2 md:py-2">
+  <h2 className="text-3xl text-gray-500  lg:py-5 sm:py-2 md:py-2">
     Resume Preview
   </h2 >
 
@@ -422,7 +422,7 @@ export default function Home() {
 </div>
 
           
-            <div className=" mx-10  lg:h-screen sm:h-screen  ">
+            <div className=" mx-5  lg:h-screen sm:h-screen  ">
               <div className="flex mt-8 items-center justify-center ">
                 {documentstate && (
                   <ClipLoader
@@ -439,7 +439,7 @@ export default function Home() {
               </div>
 
               <Iframe
-                className="lg:h-screen md:h-screen h-96 "
+                className=" bg-black lg:h-screen md:h-screen h-96 "
                 // src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
                 src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
                 frameBorder="2"
