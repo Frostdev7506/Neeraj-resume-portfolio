@@ -12,13 +12,13 @@
   }
   
   .custom-markdown h2 {
-    font-size: 1.2em; 
+    font-size: 1.5em; 
     margin-bottom: 10px;
     margin-top: 10px;
   }
   
   .custom-markdown h3 {
-    font-size: 1.em; 
+    font-size: 1.2em; 
     margin-bottom: 10px;
     margin-top: 10px;
   }
@@ -35,4 +35,13 @@
 .custom-markdown a:hover{
   color: rgb(93, 93, 236);
   text-decoration: underline;
+}
+
+.custom-markdown ul {
+  list-style-type: disc; /* This will create filled circle bullet points */
+  padding-left: 20px; /* This adds some space to the left of the bullet points */
+}
+
+.custom-markdown li {
+  margin-bottom: 10px; /* This adds some space below each bullet point */
 }

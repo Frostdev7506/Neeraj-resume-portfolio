@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import dynamic from 'next/dynamic';
+
 import { useDarkMode } from '../../context/DarkModeContext';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { paraisoLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { stackoverflowLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { stackoverflowDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+
+
+
 
 
 
@@ -19,6 +23,8 @@ const DynamicSyntaxHighlighter = dynamic(
 const MarkdownRenderer = ({ content }) => {
 
   const { darkMode, setDarkMode } = useDarkMode();
+  
+
  
 
   if (!content) {
@@ -38,8 +44,9 @@ const MarkdownRenderer = ({ content }) => {
           const match = /language-(\w+)/.exec(className || '');
           if (!inline && match) {
             return (
+              
               <div className="syntax-highlighter-wrapper">
-             
+              
                
                 <SyntaxHighlighter
                   language={match[1]}
@@ -49,6 +56,9 @@ const MarkdownRenderer = ({ content }) => {
                 >
                   {String(children).replace(/\n$/, '')}
                 </SyntaxHighlighter>
+
+                
+
               </div>
             );
           } else {

@@ -8,6 +8,8 @@ import { BsBookmarkPlusFill } from "react-icons/bs";
 import Link from "next/link";
 
 import MarkdownRenderer from "./MarkdownRenderer";
+import { useRouter } from 'next/router';
+import ShareArticle from '@/components/shareArticle';
 import Footer from "../../components/Footer";
 
 export async function getStaticPaths() {
@@ -43,6 +45,9 @@ export async function getStaticProps({ params }) {
 
 export default function BlogPost({ post }) {
   const { darkMode, setDarkMode } = useDarkMode();
+  // Inside your component
+const router = useRouter();
+const url =  `${'https://neerajbutola.netlify.app'}${router.asPath}` 
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -83,16 +88,19 @@ export default function BlogPost({ post }) {
               </p>
 
               <p className=" mt-2 px-2 self-end  text-xs md:text-s lg:text-m font-bold text-gray-800 dark:text-white ">
-                {post.frontmatter.readtime}
+                {post.frontmatter.readtime +" read"}
               </p>
             </div>
-
+           
             <div className="bg-slate-10 dark:text-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-6 rounded-md shadow-md max-w-5xl w-full">
               <MarkdownRenderer content={post.compiledSource} />
             </div>
+
+            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <ShareArticle title={post.frontmatter.title} url={url} />
           </div>
         </div>
-        <div className="px-5">
+        <div className="px-10">
           <Footer />
         </div>
       </div>
