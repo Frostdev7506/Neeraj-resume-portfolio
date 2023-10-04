@@ -9,7 +9,7 @@ import Link from "next/link";
 
 import MarkdownRenderer from "./MarkdownRenderer";
 import { useRouter } from 'next/router';
-import ShareArticle from '@/components/shareArticle';
+import ShareArticle from '../../components/ShareArticle';
 import Footer from "../../components/Footer";
 
 export async function getStaticPaths() {
