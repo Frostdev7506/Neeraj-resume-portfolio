@@ -24,7 +24,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function   ({ posts }) {
+export default function  Blog ({ posts }) {
   const { darkMode, setDarkMode } = useDarkMode();
    // Limit the number of posts to 2
    const limitedPosts = posts
