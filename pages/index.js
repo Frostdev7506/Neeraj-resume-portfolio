@@ -409,7 +409,7 @@ export default function Home() {
 
         {/* Resume section */}
         <section>
-          <div className=" bg-white px-10 py-10 sm:py-2 md:py-2 rounded-lg dark:bg-gray-800">
+          <div className=" bg-white px-2 py-2 sm:py-2 md:py-2 rounded-lg dark:bg-gray-800">
           <div className="flex flex-row justify-between">
   <h2 className="text-3xl text-gray-500  lg:py-5 sm:py-2 md:py-2">
     Resume Preview
