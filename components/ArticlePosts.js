@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 
- const ArticlePosts = ({ posts })=>{
+export default function ArticlePosts({ posts }){
    
 return (
 
@@ -34,4 +34,3 @@ return (
 
 
 
-export default ArticlePosts

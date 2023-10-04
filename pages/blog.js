@@ -27,7 +27,7 @@ export async function getStaticProps() {
 export default function   ({ posts }) {
   const { darkMode, setDarkMode } = useDarkMode();
    // Limit the number of posts to 2
-   const limitedPosts = posts.slice(0, 2);
+   const limitedPosts = posts
   return (
     <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''} dark:bg-gray-800`}>
       <div className="bg-white flex-grow dark:bg-gray-800">
