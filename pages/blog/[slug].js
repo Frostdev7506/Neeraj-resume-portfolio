@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+
 import { useDarkMode } from "../../context/DarkModeContext";
 import { getPostBySlug, getPosts } from "../../lib/mdx";
 import { MdOutlineArrowBackIos } from "react-icons/md";
@@ -6,6 +6,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { BsBookmarkPlusFill } from "react-icons/bs";
 
 import Link from "next/link";
+import ArticlePosts from "../../components/ArticlePosts";
 
 import MarkdownRenderer from "./MarkdownRenderer";
 import { useRouter } from 'next/router';
@@ -26,7 +27,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug);
+  const post = await getPostBySlug(params.slug);
+  const aposts = await getPosts().map((post) => ({
+    ...post,
+    frontmatter: {
+      ...post.frontmatter,
+      date: post.frontmatter.date.toISOString(),
+    },
+  }));
+  const limitedPosts = aposts.slice(0, 2);
 
   const serializedPost = {
     ...post,
@@ -39,20 +48,21 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post: serializedPost,
+      aposts: limitedPosts
     },
   };
 }
 
-export default function BlogPost({ post }) {
+export default function BlogPost({ post, aposts }) {
   const { darkMode, setDarkMode } = useDarkMode();
   // Inside your component
-const router = useRouter();
-const url =  `${'https://neerajbutola.netlify.app'}${router.asPath}` 
+  const router = useRouter();
+  const url = `${'https://neerajbutola.netlify.app'}${router.asPath}`
 
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="flex flex-col min-h-screen bg-white text-gray-500 dark:bg-gray-800">
-        <nav className="  flex justify-between  mt-10 px-10  ">
+        <nav className="  flex justify-between  mt-7 md:px-10  lg:px-10 sm:px-5 ">
           <div className="flex items-center">
             <Link href="/blog">
               <p className="text-3xl md:text-4xl lg:text-5xl text-gray-800 dark:text-white">
@@ -75,7 +85,7 @@ const url =  `${'https://neerajbutola.netlify.app'}${router.asPath}`
           </div>
         </nav>
         <div className="flex-grow">
-          <div className="flex flex-col items-center  h-full px-10 md:px-20 lg:px-40 ">
+          <div className="flex flex-col items-center  h-full sm:px-8 md:px-10 lg:px-20 ">
             <div className="flex  justify-start max-w-5xl ">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-teal-600">
                 {post.frontmatter.title}
@@ -88,16 +98,26 @@ const url =  `${'https://neerajbutola.netlify.app'}${router.asPath}`
               </p>
 
               <p className=" mt-2 px-2 self-end  text-xs md:text-s lg:text-m font-bold text-gray-800 dark:text-white ">
-                {post.frontmatter.readtime +" read"}
+                {post.frontmatter.readtime + " read"}
               </p>
             </div>
-           
+
             <div className="bg-slate-10 dark:text-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-6 rounded-md shadow-md max-w-5xl w-full">
               <MarkdownRenderer content={post.compiledSource} />
             </div>
 
-            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+            <p className="text-xl font-bold py-2 px-2 my-2 mx-2">Share This Article</p>
             <ShareArticle title={post.frontmatter.title} url={url} />
+            <hr className="my-6 bg-black border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+           
+            <div className=" bg-gray-400 dark:bg-slate-700 rounded-lg flex flex-col items-center justify-center mx-10 h-full px-10 py-5 md:px-20 lg:px-40 ">
+            <p className="text-xl text-white font-bold py-2 px-2 my-2 mx-2">Recent Articles</p>
+              <ArticlePosts posts={aposts} />
+
+            </div>
+
           </div>
         </div>
         <div className="px-10">

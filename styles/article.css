@@ -45,3 +45,7 @@
 .custom-markdown li {
   margin-bottom: 10px; /* This adds some space below each bullet point */
 }
+
+.custom-markdown hr{
+  color: rgb(93, 93, 236);
+}
