@@ -24,10 +24,10 @@ export async function getStaticProps() {
   };
 }
 
-export default function  Blog ({ posts }) {
+export default function Blog({ posts }) {
   const { darkMode, setDarkMode } = useDarkMode();
-   // Limit the number of posts to 2
-   const limitedPosts = posts
+  // Limit the number of posts to 2
+  const limitedPosts = posts
   return (
     <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''} dark:bg-gray-800`}>
       <div className="bg-white flex-grow dark:bg-gray-800">
@@ -65,11 +65,10 @@ export default function  Blog ({ posts }) {
 
 
         </nav>
-        <div className="flex flex-col items-center justify-center h-full px-10 md:px-20 lg:px-40 py-10 md:py-20 lg:py-32">
-
-        <ArticlePosts posts={limitedPosts} />
-   
+        <div className="flex flex-col items-center justify-center sm:px-4 md:px-8 lg:px-12 xl:px-20 sm:py-4 md:py-8 lg:py-16 xl:py-24">
+          <ArticlePosts posts={limitedPosts} />
         </div>
+
       </div>
       <div className=' bg-white dark:bg-gray-800 px-10'>
         <Footer />

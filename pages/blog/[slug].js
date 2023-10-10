@@ -102,7 +102,7 @@ export default function BlogPost({ post, aposts }) {
               </p>
             </div>
 
-            <div className="bg-slate-10 dark:text-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-6 rounded-md shadow-md max-w-5xl w-full">
+            <div className="bg-slate-10 dark:text-white dark:bg-gray-700 border  border-gray-300 dark:border-gray-600 p-10 rounded-md shadow-md max-w-5xl w-full ">
               <MarkdownRenderer content={post.compiledSource} />
             </div>
 
@@ -112,11 +112,11 @@ export default function BlogPost({ post, aposts }) {
             <hr className="my-6 bg-black border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
            
-            <div className=" bg-gray-100 dark:bg-slate-700 rounded-lg flex flex-col items-center justify-center pb-10 mx-10 h-full px-10 py-5 md:px-20 lg:px-40 ">
-            <p className="text-4xl text-teal-600 font-bold py-2 px-2 my-2 mx-2">Recent Articles</p>
-              <ArticlePosts posts={aposts} />
+          <div className="bg-gray-100 dark:bg-slate-700 rounded-lg flex flex-col items-center justify-center pb-5 mx-2 h-full px-2 py-2 md:px-10 lg:px-20 xl:px-32">
+  <p className="text-2xl md:text-4xl text-teal-600 font-bold py-2 px-2 my-2 mx-2">Recent Articles</p>
+  <ArticlePosts posts={aposts} />
+</div>
 
-            </div>
 
           </div>
         </div>
