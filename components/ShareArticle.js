@@ -5,7 +5,11 @@ import {
   TwitterShareButton,
   TwitterIcon,
   LinkedinShareButton,
-  LinkedinIcon
+  LinkedinIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  EmailShareButton,
+  EmailIcon
 } from 'react-share';
 
 const ShareArticle = ({ title, url }) => {
@@ -22,6 +26,14 @@ const ShareArticle = ({ title, url }) => {
       <LinkedinShareButton url={url}>
         <LinkedinIcon size={32} round />
       </LinkedinShareButton>
+
+      <WhatsappShareButton url={url} title={title}>
+        <WhatsappIcon size={32} round />
+      </WhatsappShareButton>
+
+      <EmailShareButton url={url} subject={title}>
+        <EmailIcon size={32} round />
+      </EmailShareButton>
     </div>
   );
 };

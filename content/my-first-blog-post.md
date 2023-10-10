@@ -3,6 +3,7 @@ title: My First Blog Post
 date: 2023-08-01
 slug: my-first-blog-post
 readtime: 10 minutes
+tags: Tech,React,Server
 ---
 
 # My First Blog Post

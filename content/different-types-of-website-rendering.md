@@ -3,6 +3,7 @@ title: Exploring Different Types of Website Rendering
 date: 2023-08-01
 slug: different-types-of-website-rendering
 readtime: 1 minute
+tags: Tech,React,Server
 ---
 
 ## **Website Rendering Types**

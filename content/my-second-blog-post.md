@@ -3,6 +3,7 @@ title: My Second Blog Post
 date: 2023-08-01
 slug: my-second-blog-post 
 readtime: 2 minutes
+tags: Tech,React,Server
 ---
 
 # My Second Blog Post
