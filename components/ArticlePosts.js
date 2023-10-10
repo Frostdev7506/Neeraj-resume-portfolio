@@ -5,7 +5,7 @@ export default function ArticlePosts({ posts }) {
   console.log("posts/", posts);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 my-10">
       {posts.map((post, index) => (
         <div
           key={index}
