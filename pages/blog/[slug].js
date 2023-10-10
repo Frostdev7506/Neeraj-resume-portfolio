@@ -62,28 +62,29 @@ export default function BlogPost({ post, aposts }) {
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="flex flex-col min-h-screen bg-white text-gray-500 dark:bg-gray-800">
-        <nav className="  flex justify-between  mt-7 md:px-10  lg:px-10 sm:px-5 ">
+        <nav className="flex justify-between mt-7 md:px-10 lg:px-10 sm:px-5">
           <div className="flex items-center">
             <Link href="/blog">
-              <p className="text-3xl md:text-4xl lg:text-5xl text-gray-800 dark:text-white">
+              <p className="text-3xl ml-5 mb-5 md:text-4xl lg:text-5xl text-gray-800 dark:text-white">
                 <MdOutlineArrowBackIos />
               </p>
             </Link>
           </div>
 
           <div className="flex items-center">
-            <h1 className=" font-burtons text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white "></h1>
+            <h1 className="font-burtons text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white"></h1>
           </div>
 
           <div className="flex items-center">
-            <li className=" ">
+            <li className="">
               <BsFillMoonStarsFill
                 onClick={() => setDarkMode(!darkMode)}
-                className=" cursor-pointer mb-5 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white"
+                className="cursor-pointer mr-5 mb-10 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white"
               />
             </li>
           </div>
         </nav>
+
         <div className="flex-grow">
           <div className="flex flex-col items-center  h-full sm:px-8 md:px-10 lg:px-20 ">
             <div className="flex  justify-start max-w-5xl ">
@@ -111,11 +112,11 @@ export default function BlogPost({ post, aposts }) {
             <ShareArticle title={post.frontmatter.title} url={url} />
             <hr className="my-6 bg-black border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-           
-          <div className="bg-gray-100 dark:bg-slate-700 rounded-lg flex flex-col items-center justify-center pb-5 mx-2 h-full px-2 py-2 md:px-10 lg:px-20 xl:px-32">
-  <p className="text-2xl md:text-4xl text-teal-600 font-bold py-2 px-2 my-2 mx-2">Recent Articles</p>
-  <ArticlePosts posts={aposts} />
-</div>
+
+            <div className="bg-gray-100 dark:bg-slate-700 rounded-lg flex flex-col items-center justify-center pb-5 mx-2 h-full px-2 py-2 md:px-10 lg:px-20 xl:px-32">
+              <p className="text-2xl md:text-4xl text-teal-600 font-bold py-2 px-2 my-2 mx-2">Recent Articles</p>
+              <ArticlePosts posts={aposts} />
+            </div>
 
 
           </div>
