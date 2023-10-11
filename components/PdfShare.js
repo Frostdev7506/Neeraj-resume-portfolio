@@ -10,6 +10,7 @@ const PdfShare = ({ pdfUrl }) => {
           text: 'Hi, kindly check this resume ',
           url: pdfUrl, // Share the PDF URL
         });
+
       } else {
         alert('Web Share API is not supported in this browser.');
       }
@@ -24,7 +25,11 @@ const PdfShare = ({ pdfUrl }) => {
         onClick={handleShareClick}
         className="rounded-lg px-5 py-3 shadow-md bg-gray-700 text-white mr-3"
       >
-        Share PDF
+        <a 
+                  href="https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf">
+Share
+        </a>
+              
       </button>
     </div>
   );
