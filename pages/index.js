@@ -11,6 +11,8 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 
+import techStackData from "../HelperFunctions/techStackData";
+
 import Iframe from "react-iframe";
 
 import { useState, useEffect } from "react";
@@ -38,11 +40,6 @@ import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 
-import react from "../public/react.svg";
-import azure from "../public/azure.png";
-import node from "../public/nodejs.svg";
-import mysql from "../public/mysql.svg";
-import aws from "../public/aws.svg";
 import github from "../public/github.png";
 import js from "../public/javascript.png";
 import { ToastContainer, toast } from "react-toastify";
@@ -134,9 +131,9 @@ export default function Home() {
             </a>
           </div>
           <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-500">
-            <a href="#">
+            {/* <a href="#">
               <AiFillTwitterCircle />
-            </a>
+            </a> */}
             <a id="contact" href="https://github.com/Frostdev7506">
               <AiFillGithub />
             </a>
@@ -170,8 +167,10 @@ export default function Home() {
 
         <section>
           <div className=" text-center mt-2 my-2">
-            <h3 className=" text-3xl py-1 text-gray-500">My aspirations</h3>
-            <p className="text-lg py-5 leading-8 text-gray-500 lg:text-xl">
+            <h3 className=" text-4xl py-1 text-gray-500 hover:text-teal-600">
+              My aspirations
+            </h3>
+            <p className="text-2xl py-5 leading-8 text-gray-500 lg:text-xl">
               I aspire to become a better problem solver every day. My main
               focus is on building <span className=" text-teal-500">Web</span>{" "}
               and <span className=" text-teal-500">Native </span>
@@ -485,26 +484,3 @@ export default function Home() {
     </div>
   );
 }
-
-const techStackData = [
-  {
-    imageUrl: react, // Replace with the actual path
-    title: "React.js",
-    description: "A JavaScript library for building user interfaces.",
-  },
-  {
-    imageUrl: node, // Replace with the actual path
-    title: "Node.js",
-    description: "JavaScript runtime for server-side applications.",
-  },
-  {
-    imageUrl: mysql, // Replace with the actual path
-    title: "Mysql",
-    description: "Open-source relational database management system.",
-  },
-  {
-    imageUrl: aws, // Replace with the actual path
-    title: "AWS",
-    description: "Comprehensive cloud computing platform by Amazon.",
-  },
-];

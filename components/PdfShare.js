@@ -13,7 +13,9 @@ const PdfShare = ({ pdfUrl }) => {
           url: pdfUrl, // Share the PDF URL
         });
       } else {
-        toast("Web Share API is not supported in this browser.");
+        toast(
+          "Web Share API is not supported in this browser. But you can download the PDF"
+        );
       }
     } catch (error) {
       console.error("Error sharing PDF:", error);
