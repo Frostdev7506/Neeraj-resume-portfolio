@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const PdfShare = ({ pdfUrl }) => {
   const handleShareClick = async () => {
@@ -6,16 +6,15 @@ const PdfShare = ({ pdfUrl }) => {
       if (navigator.share) {
         // Share the PDF URL directly using the Web Share API
         await navigator.share({
-          title: 'PDF Viewer',
-          text: 'Hi, kindly check this resume ',
+          title: "PDF Viewer",
+          text: "Hi, kindly check this resume ",
           url: pdfUrl, // Share the PDF URL
         });
-
       } else {
-        alert('Web Share API is not supported in this browser.');
+        alert("Web Share API is not supported in this browser.");
       }
     } catch (error) {
-      console.error('Error sharing PDF:', error);
+      console.error("Error sharing PDF:", error);
     }
   };
 
@@ -23,13 +22,11 @@ const PdfShare = ({ pdfUrl }) => {
     <div className="mt-5">
       <button
         onClick={handleShareClick}
-        className="rounded-lg px-5 py-3 shadow-md bg-gray-700 text-white mr-3"
+        className="rounded-lg px-5 py-3 shadow-md bg-gray-700 text-white mr-1"
       >
-        <a 
-                  href="https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf">
-Share
+        <a href="https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf">
+          Share
         </a>
-              
       </button>
     </div>
   );

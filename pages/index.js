@@ -13,7 +13,7 @@ import {
 
 import Iframe from "react-iframe";
 
-import { useState,createContext, useContext, } from "react";
+import { useState, useEffect } from "react";
 
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -45,14 +45,15 @@ import mysql from "../public/mysql.svg";
 import aws from "../public/aws.svg";
 import github from "../public/github.png";
 import js from "../public/javascript.png";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
-import Footer from '../components/Footer'; 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer";
 
-import { useDarkMode } from '../context/DarkModeContext';
+import { useDarkMode } from "../context/DarkModeContext";
 
 const override = {
   margin: "0 auto",
+
   borderColor: "red",
 };
 
@@ -65,8 +66,13 @@ export default function Home() {
     setDocumentState(false);
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDocumentState(false);
+    }, 5000); // Change document state to false after 5 seconds
 
-
+    return () => clearTimeout(timer); // This function will be called when the component unmounts
+  }, []);
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -138,26 +144,28 @@ export default function Home() {
               <AiFillLinkedin />
             </a>
             <a href="#contactme">
-              <AiOutlineMail/>
+              <AiOutlineMail />
             </a>
           </div>
           <div className=" relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
-            <Image alt="Developer at Work" src={deved} layout="fill" objectFit="cover" />
+            <Image
+              alt="Developer at Work"
+              src={deved}
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
         </section>
 
         <section>
-
-
-{/* Button to the Blog Page */}
-<div className="flex justify-center mt-6">
-  <Link href="/blog">
-    <button className="bg-teal-500 text-white px-6 py-3 rounded-md hover:bg-teal-600">
-      Visit Blog
-    </button>
-  </Link>
-</div>
-
+          {/* Button to the Blog Page */}
+          <div className="flex justify-center mt-6">
+            <Link href="/blog">
+              <button className="bg-teal-500 text-white px-6 py-3 rounded-md hover:bg-teal-600">
+                Visit Blog
+              </button>
+            </Link>
+          </div>
         </section>
 
         <section>
@@ -171,24 +179,26 @@ export default function Home() {
             </p>
           </div>
         </section>
- {/* section 2  */}
+        {/* section 2  */}
         <section>
-      <div className="py-8 dark:bg-gray-800 mt-10">
-        <div className="container mx-auto">
-          <h2 className="text-3xl py-5 mb-8 text-gray-500">Technology Stack</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {techStackData.map((tech, index) => (
-              <TechStackCards
-                key={index}
-                imageUrl={tech.imageUrl}
-                title={tech.title}
-                description={tech.description}
-              />
-            ))}
+          <div className="py-8 dark:bg-gray-800 mt-10">
+            <div className="container mx-auto">
+              <h2 className="text-3xl py-5 mb-8 text-gray-500">
+                Technology Stack
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {techStackData.map((tech, index) => (
+                  <TechStackCards
+                    key={index}
+                    imageUrl={tech.imageUrl}
+                    title={tech.title}
+                    description={tech.description}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
         {/* section 3  */}
         <section className="mt-5">
           <div>
@@ -410,95 +420,91 @@ export default function Home() {
         {/* Resume section */}
         <section>
           <div className=" bg-white px-2 py-2 sm:py-2 md:py-2 rounded-lg dark:bg-gray-800">
-          <div className="flex flex-row justify-between">
-  <h2 className="text-3xl text-gray-500  lg:py-5 sm:py-2 md:py-2">
-    Resume Preview
-  </h2 >
+            <div className="flex flex-row justify-around ">
+              <h2 className="text-3xl text-gray-500  lg:py-5 sm:py-2 md:py-2">
+                Resume Preview
+              </h2>
 
-  <div className="">
-  <PdfShare pdfUrl={'https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf'} />
+              <div className="">
+                <PdfShare
+                  pdfUrl={
+                    "https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf"
+                  }
+                />
+              </div>
+            </div>
 
-  </div>
-</div>
-
-          
             <div className=" mx-5  lg:h-screen sm:h-screen  ">
-              <div className="flex mt-8 items-center justify-center ">
-                {documentstate && (
-                  <ClipLoader
-                    color={"red"}
-                    loading={documentstate}
-                    size={300}
+              <>
+                {documentstate ? (
+                  <div className="flex mt-8 items-center justify-center h-screen ">
+                    <ClipLoader
+                      color={"red"}
+                      loading={documentstate}
+                      size={300}
+                      width={"80%"}
+                      css={override}
+                      height={"500%"}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                    />
+                  </div>
+                ) : (
+                  <Iframe
+                    className=" bg-gray-100 lg:h-screen md:h-screen h-96 "
+                    src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
+                    // src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
+                    frameBorder="2"
+                    scrolling="auto"
+                    onLoad={handleIframeLoad}
+                    layout="responsive"
                     width={"100%"}
-                    css={override}
                     height={"100%"}
-                    aria-label="Loading Spinner"
-                    data-testid="loader"
                   />
                 )}
-              </div>
-
-              <Iframe
-                className=" bg-black lg:h-screen md:h-screen h-96 "
-                // src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
-                src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
-                frameBorder="2"
-                scrolling="auto"
-                onLoad={handleIframeLoad}
-                layout="responsive"
-                width={"100%"}
-                height={"100%"}
-              />
+              </>
             </div>
           </div>
         </section>
-
-
-
-
 
         {/* github widget */}
         <section>
           <GitHubWidget />
         </section>
 
-{/* Contact Me  */}
+        {/* Contact Me  */}
 
-<section id="contactme">
-<ContactForm/>
-<ToastContainer />
-
-</section>
+        <section id="contactme">
+          <ContactForm />
+          <ToastContainer />
+        </section>
 
         {/* footer  */}
-       <Footer/>
+        <Footer />
       </main>
     </div>
   );
 }
 
-
-
-
 const techStackData = [
   {
     imageUrl: react, // Replace with the actual path
-    title: 'React.js',
-    description: 'A JavaScript library for building user interfaces.',
+    title: "React.js",
+    description: "A JavaScript library for building user interfaces.",
   },
   {
     imageUrl: node, // Replace with the actual path
-    title: 'Node.js',
-    description: 'JavaScript runtime for server-side applications.',
+    title: "Node.js",
+    description: "JavaScript runtime for server-side applications.",
   },
   {
     imageUrl: mysql, // Replace with the actual path
-    title: 'Mysql',
-    description: 'Open-source relational database management system.',
+    title: "Mysql",
+    description: "Open-source relational database management system.",
   },
   {
-    imageUrl:aws, // Replace with the actual path
-    title: 'AWS',
-    description: 'Comprehensive cloud computing platform by Amazon.',
+    imageUrl: aws, // Replace with the actual path
+    title: "AWS",
+    description: "Comprehensive cloud computing platform by Amazon.",
   },
 ];
