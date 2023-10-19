@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -9,8 +9,8 @@ import {
   WhatsappShareButton,
   WhatsappIcon,
   EmailShareButton,
-  EmailIcon
-} from 'react-share';
+  EmailIcon,
+} from "react-share";
 
 const ShareArticle = ({ title, url }) => {
   return (

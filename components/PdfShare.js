@@ -1,4 +1,6 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PdfShare = ({ pdfUrl }) => {
   const handleShareClick = async () => {
@@ -11,7 +13,7 @@ const PdfShare = ({ pdfUrl }) => {
           url: pdfUrl, // Share the PDF URL
         });
       } else {
-        alert("Web Share API is not supported in this browser.");
+        toast("Web Share API is not supported in this browser.");
       }
     } catch (error) {
       console.error("Error sharing PDF:", error);
