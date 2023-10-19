@@ -420,12 +420,12 @@ export default function Home() {
         {/* Resume section */}
         <section>
           <div className=" bg-white px-2 py-2 sm:py-2 md:py-2 rounded-lg dark:bg-gray-800">
-            <div className="flex flex-row lg:justify-between sm:justify-around mb-4 items-center">
-              <h2 className="text-3xl text-gray-500  lg:py-5 sm:py-2 md:py-2">
+            <div className="flex flex-row lg:justify-between sm:justify-around md:justify-around mb-4 items-center">
+              <h2 className="text-3xl text-gray-500 sm:mx-4 lg:py-5  sm:py-2 md:py-2">
                 Resume Preview
               </h2>
 
-              <div className="">
+              <div className="md:mx-4 sm:mx-4">
                 <PdfShare
                   pdfUrl={
                     "https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf"
