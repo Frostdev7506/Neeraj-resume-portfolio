@@ -131,7 +131,7 @@ export default function Home() {
               </p>
             </a>
           </div>
-          <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-500">
+          <div className=" mt-5 text-5xl flex justify-center gap-16 py-10 text-gray-500">
             {/* <a href="#">
               <AiFillTwitterCircle />
             </a> */}
@@ -167,7 +167,7 @@ export default function Home() {
         </section>
 
         <section>
-          <div className=" text-center mt-2 my-2">
+          <div className=" text-center mt-10 my-2">
             <h3 className=" text-4xl py-1 text-gray-500 hover:text-teal-600">
               My aspirations
             </h3>
