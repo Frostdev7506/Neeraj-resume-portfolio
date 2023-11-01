@@ -114,7 +114,7 @@ export default function Home() {
           </nav>
           {/* Nav bar */}
 
-          <div className="text-center p-10 ">
+          <div className="text-center  ">
             <h2 className=" text-6xl py-2  text-teal-600  font-medium md:text-5xl lg:text-6xl">
               Neeraj Butola
             </h2>
@@ -183,7 +183,7 @@ export default function Home() {
         <section>
           <div className="py-8 dark:bg-gray-800 mt-10">
             <div className="container mx-auto">
-              <h2 className="text-3xl py-5 mb-8 text-gray-500">
+              <h2 className="text-3xl py-5 mb-8 text-gray-500 text-center">
                 Technology Stack
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -200,10 +200,10 @@ export default function Home() {
           </div>
         </section>
         {/* section 3  */}
-        <section className="mt-5">
-          <div>
-            <h3 className=" text-4xl py-5 text-gray-500">Portfolio </h3>
-            <p className="text-2xl py-5 leading-8 text-gray-500 lg:text-2xl mx-auto justify-evenly ">
+        <section className="mt-5 text-center mx-auto">
+          <div className="py-10">
+            <h3 className=" text-5xl py-10  text-gray-500">Portfolio </h3>
+            <p className="text-2xl   leading-8 text-gray-500 lg:text-2xl mx-auto  ">
               My experience spans numerous personal ventures where my primary
               emphasis lies in designing, developing, and deploying{" "}
               <span className=" text-teal-500">cloud-based web</span> and mobile
