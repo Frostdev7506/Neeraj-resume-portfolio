@@ -126,7 +126,8 @@ export default function Home() {
                 A dedicated developer with a product mindset who is experienced
                 in solving problems, making efficient and scalable apps,
                 improving performance and driving growth using cloud services
-                like AWS and Azure.
+                like <span className=" text-teal-500"> Amazon AWS</span> and{" "}
+                <span className=" text-teal-500"> Microsoft Azure</span>.
               </p>
             </a>
           </div>
