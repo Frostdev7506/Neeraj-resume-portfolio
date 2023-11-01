@@ -115,14 +115,14 @@ export default function Home() {
           {/* Nav bar */}
 
           <div className="text-center p-10 ">
-            <h2 className=" text-5xl py-2  text-teal-600  font-medium md:text-6xl">
+            <h2 className=" text-6xl py-2  text-teal-600  font-medium md:text-5xl lg:text-6xl">
               Neeraj Butola
             </h2>
-            <h3 className=" text-2xl text-teal-600 py-2 md:text-3xl ">
+            <h3 className=" text-3xl text-teal-600 py-2 md:text-2xl ">
               Software Developer
             </h3>
             <a id="about" href="#">
-              <p className="text-md py-5 leading-8 text-gray-500 md:text-xl max-w-lg  mx-auto lg:text-xl">
+              <p className="text-2xl py-5 leading-8 text-gray-500 sm:text-xl md:text-2xl max-w-3xl md:max-w-xl  mx-auto lg:text-3xl justify-evenly">
                 A dedicated developer with a product mindset who is experienced
                 in solving problems, making efficient and scalable apps,
                 improving performance and driving growth using cloud services
@@ -170,7 +170,7 @@ export default function Home() {
             <h3 className=" text-4xl py-1 text-gray-500 hover:text-teal-600">
               My aspirations
             </h3>
-            <p className="text-2xl py-5 leading-8 text-gray-500 lg:text-xl">
+            <p className="text-2xl py-5 leading-8 text-gray-500 lg:text-2xl">
               I aspire to become a better problem solver every day. My main
               focus is on building <span className=" text-teal-500">Web</span>{" "}
               and <span className=" text-teal-500">Native </span>
@@ -201,14 +201,14 @@ export default function Home() {
         {/* section 3  */}
         <section className="mt-5">
           <div>
-            <h3 className=" text-3xl py-5 text-gray-500">Portfolio </h3>
-            <p className="text-md py-5 leading-8 text-gray-500 lg:text-xl  ">
+            <h3 className=" text-4xl py-5 text-gray-500">Portfolio </h3>
+            <p className="text-2xl py-5 leading-8 text-gray-500 lg:text-2xl mx-auto justify-evenly ">
               My experience spans numerous personal ventures where my primary
-              emphasis lies in designing, developing, and deploying cloud-based
-              web and mobile solutions, with an emphasis on efficient
-              architecture and scalability. In addition to my work on various
-              CRUD projects, I have a diverse skill set covering a wide range of
-              technology stacks
+              emphasis lies in designing, developing, and deploying{" "}
+              <span className=" text-teal-500">cloud-based web</span> and mobile
+              solutions, with an emphasis on efficient architecture and
+              scalability. In addition to my work on various
+              <span className=" text-teal-500"> CRUD</span> projects.
             </p>
           </div>
 
