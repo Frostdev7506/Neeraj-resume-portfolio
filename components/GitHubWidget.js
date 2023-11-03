@@ -133,7 +133,7 @@ const GitHubWidget = () => {
       <div className="flex items-center justify-center ">
         {numToShow < repos.length && (
           <button
-            className="bg-gradient-to-r justify-center from-cyan-500 to-teal-500 border-y-cyan-500 text-white px-4 py-2 rounded-md mt-3"
+            className="bg-gradient-to-r justify-center from-cyan-500 to-teal-500 border-y-cyan-500   text-white px-4 py-2 rounded-md mt-3"
             onClick={handleShowMore}
           >
             Show More
