@@ -166,7 +166,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <div className=" text-center mt-2 my-2">
             <h3 className=" text-4xl py-1 text-gray-500 hover:text-teal-600">
               My aspirations
@@ -180,7 +180,7 @@ export default function Home() {
               professional.
             </p>
           </div>
-        </section>
+        </section> */}
         {/* section 2  */}
         <section>
           <div className="py-8 dark:bg-gray-800 mt-10">
