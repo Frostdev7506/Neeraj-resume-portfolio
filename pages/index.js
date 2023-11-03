@@ -171,11 +171,13 @@ export default function Home() {
             <h3 className=" text-4xl py-1 text-gray-500 hover:text-teal-600">
               My aspirations
             </h3>
-            <p className="text-2xl py-5 leading-8 text-gray-500 lg:text-2xl">
-              I aspire to become a better problem solver every day. My main
-              focus is on building <span className=" text-teal-500">Web</span>{" "}
-              and <span className=" text-teal-500">Native </span>
-              applications in the <span className=" text-teal-500">Cloud</span>
+            <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl  ">
+              I am a fullstack developer with professional experience in
+              JavaScript, React, Node.js, and other web technologies.I have
+              deployed web apps on AWS, Azure,and Google Cloud.I'm seeking roles
+              where I can collaborate with senior cloud developers, sharpen my
+              skills through challenges and continuously improve as a technical
+              professional.
             </p>
           </div>
         </section>
@@ -183,7 +185,7 @@ export default function Home() {
         <section>
           <div className="py-8 dark:bg-gray-800 mt-10">
             <div className="container mx-auto">
-              <h2 className="text-3xl py-5 mb-8 text-gray-500 text-center">
+              <h2 className="text-4xl py-5 mb-8 text-gray-500 text-center">
                 Technology Stack
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

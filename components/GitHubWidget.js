@@ -6,6 +6,11 @@ import TechnologyTags from "./TechnologyTags";
 const defaultTechnology = "GitHub";
 const GitHubWidget = () => {
   const [repos, setRepos] = useState([]);
+  const [numToShow, setNumToShow] = useState(6);
+
+  const handleShowMore = () => {
+    setNumToShow(numToShow + 20);
+  };
 
   useEffect(() => {
     // Fetch public repositories from GitHub API
@@ -69,7 +74,7 @@ const GitHubWidget = () => {
         Github Repositories
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        {repos.map((repo) => (
+        {repos.slice(0, numToShow).map((repo) => (
           <div
             key={repo.id}
             className="bg-gray-100 text-black   p-5 rounded-lg shadow-xl dark:bg-gray-700 "
@@ -124,6 +129,16 @@ const GitHubWidget = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center ">
+        {numToShow < repos.length && (
+          <button
+            className="bg-gradient-to-r justify-center from-cyan-500 to-teal-500 border-y-cyan-500 text-white px-4 py-2 rounded-md mt-3"
+            onClick={handleShowMore}
+          >
+            Show More
+          </button>
+        )}
       </div>
     </div>
   );
