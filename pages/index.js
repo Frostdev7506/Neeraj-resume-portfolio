@@ -174,10 +174,10 @@ export default function Home() {
             <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl  ">
               I am a fullstack developer with professional experience in
               JavaScript, React, Node.js, and other web technologies.I have
-              deployed web apps on AWS, Azure,and Google Cloud.I'm seeking roles
-              where I can collaborate with senior cloud developers, sharpen my
-              skills through challenges and continuously improve as a technical
-              professional.
+              deployed web apps on AWS, Azure,and Google Cloud.I am seeking
+              roles where I can collaborate with senior cloud developers,
+              sharpen my skills through challenges and continuously improve as a
+              technical professional.
             </p>
           </div>
         </section>
