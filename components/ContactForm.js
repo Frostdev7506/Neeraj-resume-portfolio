@@ -65,12 +65,14 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="ContactForm mt-20 mb-20 bg-gray-100 dark:bg-gray-700 p-10 rounded-lg shadow-xl max-w-10xl mx-auto">
+    <div className="ContactForm mt-20 mb-20 bg-gray-100 dark:bg-gray-700  p-4 sm:p-10 rounded-lg shadow-xl max-w-10xl mx-auto">
       <div className="flex flex-col sm:flex-row">
-        <div className="flex-1 mr-10 justify-center ">
-          <h1 className="sm:text-6xl text-3xl text-gray-500 mt-8 mb-10 ">
-            Contact Me
-          </h1>
+        <div className="flex-1 sm:mr-10 justify-center ">
+          <div class="flex items-center justify-center">
+            <h1 class="sm:text-6xl text-3xl text-gray-500 mt-8 mb-10">
+              Contact Me
+            </h1>
+          </div>
 
           <form
             autoComplete="off"
