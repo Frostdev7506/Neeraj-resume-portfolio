@@ -39,6 +39,7 @@ import student from "../public/student.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import aspiration from "../public/Aspiration.png";
 
 import github from "../public/github.png";
 import js from "../public/javascript.png";
@@ -114,40 +115,58 @@ export default function Home() {
           </nav>
           {/* Nav bar */}
 
-          <div className="text-justify  ">
-            <h2 className=" text-6xl py-2 text-center  text-teal-600  font-medium md:text-5xl lg:text-6xl">
+          <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <h2 className="  text-6xl py-2 text-center   text-teal-600  font-medium md:text-5xl lg:text-6xl">
               Neeraj Butola
             </h2>
-            <h3 className=" text-3xl text-teal-600 text-center py-2 md:text-2xl ">
+            <h5 class="mb-2  mt-2 text-3xl font-bold text-teal-600 dark:text-white">
               Software Developer
-            </h3>
-            <a id="about" href="#">
-              <p className="text-2xl py-5 leading-8 text-gray-500 sm:text-xl md:text-2xl max-w-3xl md:max-w-xl  mx-auto lg:text-3xl ">
-                A dedicated developer with a product mindset who is experienced
-                in solving problems, making efficient and scalable apps,
-                improving performance and driving growth using cloud services
-                like <span className=" text-teal-500"> Amazon AWS</span> and{" "}
-                <span className=" text-teal-500"> Microsoft Azure</span>.
-              </p>
-            </a>
-          </div>
-          <div className=" text-5xl flex justify-center gap-16 mt-10 py-3 text-gray-500">
-            {/* <a href="#">
+            </h5>
+            <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
+              Results-oriented Software Developer with a product-centric
+              mindset.Expert in All major cloud providers like.
+              <span className=" text-teal-500"> AWS</span> ,
+              <span className=" text-teal-500"> Azure</span> and{" "}
+              <span className=" text-teal-500"> GCP</span>.
+            </p>
+            <div class="items-center mt-5 justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+              <a
+                href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
+                class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+              >
+                <div class="min-w-2xl min-h-fit">
+                  <div class="mb-1 text-xs">Download the resume</div>
+                </div>
+              </a>
+              <a
+                href="#contactme"
+                class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+              >
+                <div class="min-w-2xl min-h-fit">
+                  <div class="mb-1 text-xs">Get in touch</div>
+                </div>
+              </a>
+            </div>
+
+            <div className=" text-5xl flex justify-center gap-16 mt-4 py-3 text-gray-500">
+              {/* <a href="#">
               <AiFillTwitterCircle />
             </a> */}
-            <a id="contact" href="https://github.com/Frostdev7506">
-              <AiFillGithub />
-            </a>
-            <a href="https://www.linkedin.com/in/neeraj-butola/">
-              <AiFillLinkedin />
-            </a>
-            <a href="#contactme">
-              <AiOutlineMail />
-            </a>
+              <a id="contact" href="https://github.com/Frostdev7506">
+                <AiFillGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/neeraj-butola/">
+                <AiFillLinkedin />
+              </a>
+              <a href="#contactme">
+                <AiOutlineMail />
+              </a>
+            </div>
           </div>
-          <div className=" relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
+
+          <div className=" relative justify-center mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
             <Image
-              alt="Developer at Work"
+              alt="Developer Neeraj at Work"
               src={deved}
               layout="fill"
               objectFit="cover"
@@ -167,8 +186,29 @@ export default function Home() {
         </section>
 
         <section>
-          <div className=" text-justify mt-10 my-2">
-            <h3 className=" text-4xl py-1 text-center text-gray-500 hover:text-teal-600">
+          <div className=" text-justify flex justify-center mx-auto mt-10 my-2">
+            <a
+              href="#"
+              class="flex flex-col h-auto items-center justify-center bg-white border border-gray-200 rounded-lg shadow  lg:w-max md:flex-row md:max-w-2xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            >
+              <Image
+                class="object-cover w-full  max-w-2xl rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                src={aspiration}
+                alt="My Aspirations"
+              />
+              <div class="flex flex-col  lg:w-max  overflow-ellipsis justify-between p-4 leading-normal">
+                <h3 className=" text-4xl py-1 text-center text-gray-500 hover:text-teal-600">
+                  My aspirations
+                </h3>
+                <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl  ">
+                  I am a fullstack developer with professional experience in
+                  JavaScript, React, Node.js, and other web technologies.I have
+                  deployed web apps on AWS, Azure,and Google Cloud.
+                </p>
+              </div>
+            </a>
+
+            {/* <h3 className=" text-4xl py-1 text-center text-gray-500 hover:text-teal-600">
               My aspirations
             </h3>
             <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl  ">
@@ -178,9 +218,10 @@ export default function Home() {
               roles where I can collaborate with senior cloud developers,
               sharpen my skills through challenges and continuously improve as a
               technical professional.
-            </p>
+            </p> */}
           </div>
         </section>
+
         {/* section 2  */}
         <section>
           <div className="py-8 dark:bg-gray-800 mt-10">
