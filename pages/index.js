@@ -94,7 +94,7 @@ export default function Home() {
         <section className=" min-h-screen ">
           {/* Nav bar */}
           <nav className="py-10 text-gray-500 mb-12 flex justify-between ">
-            <h1 className="text-xl font-burtons ">developedbyneeraj</h1>
+            <h1 className="text-xl font-burtons ">Resume/Portfolio</h1>
             <ul className="flex items-center pl-5 ">
               <li className=" ">
                 <BsFillMoonStarsFill
@@ -105,7 +105,7 @@ export default function Home() {
               <li>
                 <a
                   className="bg-gradient-to-r from-cyan-500 to-teal-500 border-y-cyan-500 text-white px-4 py-2 rounded-md ml-8"
-                  href="https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf"
+                  href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
                 >
                   Resume
                 </a>
@@ -114,15 +114,15 @@ export default function Home() {
           </nav>
           {/* Nav bar */}
 
-          <div className="text-center  ">
-            <h2 className=" text-6xl py-2  text-teal-600  font-medium md:text-5xl lg:text-6xl">
+          <div className="text-justify  ">
+            <h2 className=" text-6xl py-2 text-center  text-teal-600  font-medium md:text-5xl lg:text-6xl">
               Neeraj Butola
             </h2>
-            <h3 className=" text-3xl text-teal-600 py-2 md:text-2xl ">
+            <h3 className=" text-3xl text-teal-600 text-center py-2 md:text-2xl ">
               Software Developer
             </h3>
             <a id="about" href="#">
-              <p className="text-2xl py-5 leading-8 text-gray-500 sm:text-xl md:text-2xl max-w-3xl md:max-w-xl  mx-auto lg:text-3xl justify-evenly">
+              <p className="text-2xl py-5 leading-8 text-gray-500 sm:text-xl md:text-2xl max-w-3xl md:max-w-xl  mx-auto lg:text-3xl ">
                 A dedicated developer with a product mindset who is experienced
                 in solving problems, making efficient and scalable apps,
                 improving performance and driving growth using cloud services
@@ -131,7 +131,7 @@ export default function Home() {
               </p>
             </a>
           </div>
-          <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-500">
+          <div className=" text-5xl flex justify-center gap-16 mt-10 py-3 text-gray-500">
             {/* <a href="#">
               <AiFillTwitterCircle />
             </a> */}
@@ -167,8 +167,8 @@ export default function Home() {
         </section>
 
         <section>
-          <div className=" text-center mt-2 my-2">
-            <h3 className=" text-4xl py-1 text-gray-500 hover:text-teal-600">
+          <div className=" text-justify mt-10 my-2">
+            <h3 className=" text-4xl py-1 text-center text-gray-500 hover:text-teal-600">
               My aspirations
             </h3>
             <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl  ">
@@ -202,10 +202,12 @@ export default function Home() {
           </div>
         </section>
         {/* section 3  */}
-        <section className="mt-5 text-center mx-auto">
+        <section className="mt-5 text-justify mx-auto">
           <div className="py-10">
-            <h3 className=" text-5xl py-10  text-gray-500">Portfolio </h3>
-            <p className="text-2xl   leading-8 text-gray-500 lg:text-2xl mx-auto  ">
+            <h3 className=" text-5xl py-10 text-center  text-gray-500">
+              Portfolio{" "}
+            </h3>
+            <p className="text-2xl tex  leading-8 text-gray-500 lg:text-2xl mx-auto  ">
               My experience spans numerous personal ventures where my primary
               emphasis lies in designing, developing, and deploying{" "}
               <span className=" text-teal-500">cloud-based web</span> and mobile
@@ -430,7 +432,7 @@ export default function Home() {
               <div className="md:mx-4 sm:mx-4">
                 <PdfShare
                   pdfUrl={
-                    "https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf"
+                    "https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
                   }
                 />
               </div>
@@ -454,7 +456,7 @@ export default function Home() {
                 ) : (
                   <Iframe
                     className=" bg-gray-100 lg:h-screen md:h-screen h-96 "
-                    src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf#toolbar=0&scrollbar=0"
+                    src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf#toolbar=0&scrollbar=0"
                     // src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
                     frameBorder="2"
                     scrolling="auto"

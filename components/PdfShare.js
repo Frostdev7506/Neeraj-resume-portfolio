@@ -28,7 +28,7 @@ const PdfShare = ({ pdfUrl }) => {
         onClick={handleShareClick}
         className="rounded-lg px-5 py-3 shadow-md bg-gray-700 text-white mr-1"
       >
-        <a href="https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf">
+        <a href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf">
           Share
         </a>
       </button>
