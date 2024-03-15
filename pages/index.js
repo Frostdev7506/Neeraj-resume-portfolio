@@ -230,13 +230,13 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* section 3  */}
+        {/* section 3 postfolio */}
         <section className="mt-5 text-justify mx-auto">
-          <div className="py-10">
+          <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow md:p-2 sm:p-2 dark:bg-gray-800 dark:border-gray-700 py-6 my-10 md:my-5 sm:my-2">
             <h3 className=" text-5xl py-10 text-center  text-gray-500">
               Portfolio{" "}
             </h3>
-            <p className="text-2xl tex  leading-8 text-gray-500 lg:text-2xl mx-auto  ">
+            <p className="text-2xl text-justify p-6 leading-8 text-gray-500 lg:text-2xl mx-auto md:px-6  ">
               My experience spans numerous personal ventures where my primary
               emphasis lies in designing, developing, and deploying{" "}
               <span className=" text-teal-500">cloud-based web</span> and mobile
