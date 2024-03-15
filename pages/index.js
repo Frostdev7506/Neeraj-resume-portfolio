@@ -115,7 +115,7 @@ export default function Home() {
           </nav>
           {/* Nav bar */}
 
-          <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-2 dark:bg-gray-800 dark:border-gray-700 py-6 my-10">
             <h2 className="  text-6xl py-2 text-center   text-teal-600  font-medium md:text-5xl lg:text-6xl">
               Neeraj Butola
             </h2>
@@ -148,7 +148,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className=" text-5xl flex justify-center gap-16 mt-4 py-3 text-gray-500">
+            <div className=" text-5xl flex justify-center gap-16 mt-10 py-2 text-gray-500">
               {/* <a href="#">
               <AiFillTwitterCircle />
             </a> */}
@@ -187,12 +187,12 @@ export default function Home() {
 
         <section>
           <div className=" text-justify flex justify-center mx-auto mt-10 my-2">
-            <a
-              href="#"
-              class="flex flex-col h-auto items-center justify-center bg-white border border-gray-200 rounded-lg shadow  lg:w-max md:flex-row md:max-w-2xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            <div
+              class="flex flex-col bg-white border border-gray-200 rounded-lg shadow   
+         md:flex-row lg:max-w-max md:max-w-2xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 "
             >
               <Image
-                class="object-cover w-full  max-w-2xl rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                class="object-cover   max-w-max rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                 src={aspiration}
                 alt="My Aspirations"
               />
@@ -206,19 +206,7 @@ export default function Home() {
                   deployed web apps on AWS, Azure,and Google Cloud.
                 </p>
               </div>
-            </a>
-
-            {/* <h3 className=" text-4xl py-1 text-center text-gray-500 hover:text-teal-600">
-              My aspirations
-            </h3>
-            <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl  ">
-              I am a fullstack developer with professional experience in
-              JavaScript, React, Node.js, and other web technologies.I have
-              deployed web apps on AWS, Azure,and Google Cloud.I am seeking
-              roles where I can collaborate with senior cloud developers,
-              sharpen my skills through challenges and continuously improve as a
-              technical professional.
-            </p> */}
+            </div>
           </div>
         </section>
 
