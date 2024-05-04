@@ -115,43 +115,42 @@ export default function Home() {
           </nav>
           {/* Nav bar */}
 
-          <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-2 dark:bg-gray-800 dark:border-gray-700 py-6 my-10">
-            <h2 className="  text-6xl py-2 text-center   text-teal-600  font-medium md:text-5xl lg:text-6xl">
-              Neeraj Butola
-            </h2>
-            <h5 class="mb-2  mt-2 text-3xl font-bold text-teal-600 dark:text-white">
+          {/* Introduction card */}
+          <div class="w-30 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow sm:p-2 dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
+            <h2 class="mb-2  mt-2 text-3xl font-bold text-teal-600 dark:text-white">
               Software Developer
-            </h5>
-            <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
+            </h2>
+            <p class="mt-5 mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
               Results-oriented Software Developer with a product-centric
-              mindset.Expert in All major cloud providers like.
+              mindset. Proven ability to solve complex problems, design and
+              develop highly efficient and scalable applications, consistently
+              optimize performance, and drive measurable growth. Expert in all
+              the major Cloud providers like
               <span className=" text-teal-500"> AWS</span> ,
-              <span className=" text-teal-500"> Azure</span> and{" "}
-              <span className=" text-teal-500"> GCP</span>.
+              <span className=" text-teal-500">Azure</span> and{" "}
+              <span className=" text-teal-500">GCP</span>.
             </p>
             <div class="items-center mt-5 justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
               <a
                 href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
-                class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                class="border-2 border-gray-900 focus:border-gray-300 shadow-lg  w-full sm:w-auto bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-12 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
               >
-                <div class="min-w-2xl min-h-fit">
-                  <div class="mb-1 text-xs">Download the resume</div>
+                <div class="min-w-3xl w-100 min-h-fit">
+                  <div class="mb-1 text-xs">Resume</div>
                 </div>
               </a>
+
               <a
                 href="#contactme"
-                class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                class="border-2   border-gray-900 shadow-lg  w-full sm:w-auto bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-12 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
               >
-                <div class="min-w-2xl min-h-fit">
-                  <div class="mb-1 text-xs">Get in touch</div>
+                <div class="min-w-3xl w-100 min-h-fit">
+                  <div class="mb-1 text-xs">Contact</div>
                 </div>
               </a>
             </div>
 
             <div className=" text-5xl flex justify-center gap-16 mt-10 py-2 text-gray-500">
-              {/* <a href="#">
-              <AiFillTwitterCircle />
-            </a> */}
               <a id="contact" href="https://github.com/Frostdev7506">
                 <AiFillGithub />
               </a>
@@ -186,7 +185,7 @@ export default function Home() {
         </section>
 
         <section>
-          <div className=" text-justify flex justify-center mx-auto mt-10 my-2">
+          <div className=" flex justify-center mx-auto mt-10 my-2">
             <div
               class="flex flex-col bg-white border border-gray-200 rounded-lg shadow   
          md:flex-row lg:max-w-max md:max-w-2xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 "
@@ -231,12 +230,12 @@ export default function Home() {
           </div>
         </section>
         {/* section 3 postfolio */}
-        <section className="mt-5 text-justify mx-auto">
-          <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow md:p-2 sm:p-2 dark:bg-gray-800 dark:border-gray-700 py-6 my-10 md:my-5 sm:my-2">
+        <section className="mt-5  mx-auto">
+          <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow md:p-2 sm:p-2 dark:bg-gray-800 dark:border-gray-700 py-6 my-10 md:my-5 sm:my-2">
             <h3 className=" text-5xl py-10 text-center  text-gray-500">
               Portfolio{" "}
             </h3>
-            <p className="text-2xl text-justify p-6 leading-8 text-gray-500 lg:text-2xl mx-auto md:px-6  ">
+            <p className="text-2xl  p-6 leading-8 text-gray-500 lg:text-2xl mx-auto md:px-6  ">
               My experience spans numerous personal ventures where my primary
               emphasis lies in designing, developing, and deploying{" "}
               <span className=" text-teal-500">cloud-based web</span> and mobile
