@@ -116,7 +116,7 @@ export default function Home() {
           {/* Nav bar */}
 
           {/* Introduction card */}
-          <div class="w-30 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow sm:p-2 dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
+          <div class="w-30 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow-lg sm:p-2 dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
             <h2 class="mb-2  mt-2 text-3xl font-bold text-teal-600 dark:text-white">
               Software Developer
             </h2>
@@ -133,7 +133,7 @@ export default function Home() {
             <div class="items-center mt-5 justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
               <a
                 href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
-                class="border-2 border-gray-900 focus:border-gray-300 shadow-lg  w-full sm:w-auto bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-12 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                class="  shadow-lg  w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-teal-500 border-y-cyan-500 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-20 py-4 "
               >
                 <div class="min-w-3xl w-100 min-h-fit">
                   <div class="mb-1 text-xs">Resume</div>
@@ -142,7 +142,7 @@ export default function Home() {
 
               <a
                 href="#contactme"
-                class="border-2   border-gray-900 shadow-lg  w-full sm:w-auto bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-12 py-4 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                class="  shadow-lg  w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-teal-500 border-y-cyan-500 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-20 py-4 "
               >
                 <div class="min-w-3xl w-100 min-h-fit">
                   <div class="mb-1 text-xs">Contact</div>
@@ -150,7 +150,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className=" text-5xl flex justify-center gap-16 mt-10 py-2 text-gray-500">
+            <div className=" mb-2 text-5xl flex justify-center gap-16 mt-10 py-2 text-gray-500">
               <a id="contact" href="https://github.com/Frostdev7506">
                 <AiFillGithub />
               </a>
@@ -187,8 +187,8 @@ export default function Home() {
         <section>
           <div className=" flex justify-center mx-auto mt-10 my-2">
             <div
-              class="flex flex-col bg-white border border-gray-200 rounded-lg shadow   
-         md:flex-row lg:max-w-max md:max-w-2xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 "
+              class="flex flex-col bg-white border border-gray-200 rounded-lg shadow-lg 
+         md:flex-row lg:max-w-max md:max-w-2xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-700 dark:hover:bg-gray-700 "
             >
               <Image
                 class="object-cover   max-w-max rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
@@ -231,7 +231,7 @@ export default function Home() {
         </section>
         {/* section 3 postfolio */}
         <section className="mt-5  mx-auto">
-          <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow md:p-2 sm:p-2 dark:bg-gray-800 dark:border-gray-700 py-6 my-10 md:my-5 sm:my-2">
+          <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow-lg md:p-2 sm:p-2 dark:bg-gray-700 dark:border-gray-700 py-6 my-10 md:my-5 sm:my-2">
             <h3 className=" text-5xl py-10 text-center  text-gray-500">
               Portfolio{" "}
             </h3>
@@ -247,7 +247,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap  justify-center items-center">
             {/* card1 */}
-            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg ">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg dark:bg-gray-700">
               <div className="relative">
                 <Image
                   src={lyrics}
@@ -282,7 +282,7 @@ export default function Home() {
             </div>
 
             {/* card2 */}
-            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg dark:bg-gray-700">
               <div className="relative">
                 <Image
                   src={bootcamp}
@@ -315,7 +315,7 @@ export default function Home() {
             </div>
 
             {/* card3*/}
-            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg dark:bg-gray-700">
               <div className="relative">
                 <Image
                   src={imagegenerator}
@@ -348,7 +348,7 @@ export default function Home() {
               </p>
             </div>
             {/* card4*/}
-            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg dark:bg-gray-700">
               <div className="relative">
                 <Image
                   src={student}
@@ -381,7 +381,7 @@ export default function Home() {
               </p>
             </div>
             {/* card5*/}
-            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg dark:bg-gray-700">
               <div className="relative">
                 <Image
                   src={web5}
@@ -414,7 +414,7 @@ export default function Home() {
               </p>
             </div>
             {/* card6*/}
-            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
+            <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg dark:bg-gray-700">
               <div className="relative">
                 <Image
                   src={web3}
@@ -454,7 +454,7 @@ export default function Home() {
           <div className=" bg-white px-2 py-2 sm:py-2 md:py-2 rounded-lg dark:bg-gray-800">
             <div className="flex flex-row lg:justify-between sm:justify-around md:justify-around mb-4 items-center">
               <h2 className="text-3xl text-gray-500 sm:mx-4 lg:py-5  sm:py-2 md:py-2">
-                Resume Preview
+                Resume
               </h2>
 
               <div className="md:mx-4 sm:mx-4">
