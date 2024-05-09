@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import contactMe from "../public/contactMe.jpeg";
-import contactUs from "../public/contactUs.svg";
+import ContactUs from "../public/ContactUs";
 
 import Image from "next/image";
 import { toast } from "react-toastify";
@@ -129,12 +129,7 @@ const ContactForm = () => {
           </form>
         </div>
         <div className="hidden sm:flex sm:flex-1">
-          <Image
-            src={contactUs}
-            alt="Contact Me Image"
-            className="rounded-md"
-            layout="responsive"
-          />
+          <ContactUs />
         </div>
       </div>
     </div>
