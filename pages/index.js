@@ -117,7 +117,7 @@ export default function Home() {
 
           {/* Introduction card */}
           <div class="w-30 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow-lg sm:p-2 dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
-            <h2 class="mb-2  mt-2 text-3xl font-bold text-teal-600 dark:text-white">
+            <h2 class="mb-2  mt-2 text-5xl font-bold text-teal-600 dark:text-white">
               Software Developer
             </h2>
             <p class="mt-5 mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
@@ -452,7 +452,7 @@ export default function Home() {
         {/* Resume section */}
         <section>
           <div className=" bg-white px-2 py-2 sm:py-2 md:py-2 rounded-lg dark:bg-gray-800">
-            <div className="flex flex-row lg:justify-between sm:justify-around md:justify-around mb-4 items-center">
+            <div className="flex lg:flex-row md:flex-col sm:flex-col justify-between mb-4 items-center min-h-fit">
               <h2 className="text-3xl text-gray-500 sm:mx-4 lg:py-5  sm:py-2 md:py-2">
                 Resume
               </h2>
@@ -466,7 +466,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className=" mx-5  lg:h-screen sm:h-screen  ">
+            <div className=" mx-5  lg:h-screen sm:h-screen h-100 ">
               <>
                 {documentstate ? (
                   <div className="flex mt-8 items-center justify-center h-screen ">
@@ -483,11 +483,11 @@ export default function Home() {
                   </div>
                 ) : (
                   <Iframe
-                    className=" bg-gray-100 lg:h-screen md:h-screen h-96 "
+                    className=" bg-gray-100 lg:h-screen md:h-screen  "
                     src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf#toolbar=0&scrollbar=0"
                     // src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
-                    frameBorder="2"
-                    scrolling="auto"
+                    frameBorder="0"
+                    scrolling="no"
                     onLoad={handleIframeLoad}
                     layout="responsive"
                     width={"100%"}
