@@ -136,7 +136,7 @@ export default function Home() {
                 class="  shadow-lg  w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-teal-500 border-y-cyan-500 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-20 py-4 "
               >
                 <div class="min-w-3xl w-100 min-h-fit">
-                  <div class="mb-1 text-xs">Resume</div>
+                  <div class="mb-1 text-xl">Resume</div>
                 </div>
               </a>
 
@@ -145,7 +145,7 @@ export default function Home() {
                 class="  shadow-lg  w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-teal-500 border-y-cyan-500 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-20 py-4 "
               >
                 <div class="min-w-3xl w-100 min-h-fit">
-                  <div class="mb-1 text-xs">Contact</div>
+                  <div class="mb-1 text-xl">Contact</div>
                 </div>
               </a>
             </div>
