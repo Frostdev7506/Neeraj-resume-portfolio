@@ -1,7 +1,10 @@
 import React from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 
+import { useDarkMode } from "../context/DarkModeContext";
+
 function Navbar() {
+  const { darkMode, setDarkMode } = useDarkMode();
   return (
     <div>
       <nav className="py-10 px-10 text-gray-500 mb-12 flex justify-between ">
