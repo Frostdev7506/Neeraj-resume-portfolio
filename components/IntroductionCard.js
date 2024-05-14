@@ -7,13 +7,25 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 
+import Image from "next/image";
+
+import deved from "../public/dev-ed-wave.png";
+
 function IntroductionCard() {
   return (
     <div>
-      <div class="w-30 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow-lg sm:p-2 dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
+      <div class="flex-1 lg:w-auto   m-4 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow-lg  dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
         <h2 class="mb-2  mt-2 text-5xl font-bold text-teal-600 dark:text-white">
           Software Developer
         </h2>
+        <div className=" relative justify-center  mx-auto bg-gradient-to-b from-teal-500 rounded-full lg:w-80 lg:h-80 mt-20 overflow-hidden md:h-96 md:w-96  sm-h-50 sm:w-50 ">
+          <Image
+            alt="Developer Neeraj at Work"
+            src={deved}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <p class="mt-5 mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
           Results-oriented Software Developer with a product-centric mindset.
           Proven ability to solve complex problems, design and develop highly
@@ -24,6 +36,7 @@ function IntroductionCard() {
           <span className=" text-teal-500">Azure</span> and{" "}
           <span className=" text-teal-500">GCP</span>.
         </p>
+
         <div class="items-center mt-5 justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
           <a
             href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"

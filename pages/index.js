@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
 
 import Image from "next/image";
-import deved from "../public/dev-ed-wave.png";
+
 import GitHubWidget from "../components/GitHubWidget";
 import ContactForm from "../components/ContactForm";
 import TechStackCards from "@/components/TechStackCards";
@@ -58,7 +58,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className=" bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-800">
+      <main className=" bg-white  md:px-20 lg:px-40 sm:px-2  dark:bg-gray-800">
         <section className=" min-h-screen ">
           {/* Nav bar */}
           <Navbar />
@@ -66,15 +66,6 @@ export default function Home() {
 
           {/* Introduction card */}
           <IntroductionCard />
-
-          <div className=" relative justify-center mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
-            <Image
-              alt="Developer Neeraj at Work"
-              src={deved}
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
         </section>
 
         <section>
@@ -110,8 +101,10 @@ export default function Home() {
 
                   <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl  lg:mx-4  ">
                     I am a fullstack developer with professional experience in
-                    JavaScript, React, Node.js, and other web technologies.I
-                    have deployed web apps on AWS, Azure,and Google Cloud.
+                    MERN Stack which includes technologies like JavaScript,
+                    React, Node.js, and other web technologies.I have also
+                    deployed Applications on major cloud providers like AWS,
+                    Azure,and Google Cloud.
                   </p>
                   <p className="text-2xl py-5  max-w-6xl mx-auto text-gray-500 lg:text-2xl lg:mx-4 ">
                     I am a developer with 2+ years of expertise in designing and
