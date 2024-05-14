@@ -4,7 +4,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 function Navbar() {
   return (
     <div>
-      <nav className="py-10 text-gray-500 mb-12 flex justify-between ">
+      <nav className="py-10 px-10 text-gray-500 mb-12 flex justify-between ">
         <h1 className="text-xl font-burtons ">Resume/Portfolio</h1>
         <ul className="flex items-center pl-5 ">
           <li className=" ">

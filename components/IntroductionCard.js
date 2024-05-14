@@ -16,7 +16,7 @@ function IntroductionCard() {
     <div>
       <div class="flex-1 lg:w-auto   m-4 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow-lg  dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
         <h2 class="mb-2  mt-2 text-5xl font-bold text-teal-600 dark:text-white">
-          Software Developer
+          Fullstack Software Developer
         </h2>
         <div className=" relative justify-center  mx-auto bg-gradient-to-b from-teal-500 rounded-full lg:w-80 lg:h-80 mt-20 overflow-hidden md:h-96 md:w-96  sm-h-50 sm:w-50 ">
           <Image
