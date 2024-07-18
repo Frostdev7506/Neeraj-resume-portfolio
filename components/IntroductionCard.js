@@ -16,7 +16,7 @@ function IntroductionCard() {
     <div>
       <div class="flex-1 lg:w-auto   m-4 p-4 text-center bg-gray-800 border border-gray-200 rounded-lg shadow-lg  dark:bg-gray-700 dark:border-gray-700 py-6 my-10">
         <h2 class="mb-2  mt-2 text-5xl font-bold text-teal-600 dark:text-white">
-          Fullstack Software Developer
+          Fullstack Developer
         </h2>
         <div className=" relative justify-center  mx-auto bg-gradient-to-b from-teal-500 rounded-full lg:w-80 lg:h-80 mt-20 overflow-hidden md:h-96 md:w-96  sm-h-50 sm:w-50 ">
           <Image
@@ -26,16 +26,13 @@ function IntroductionCard() {
             objectFit="cover"
           />
         </div>
-        <p class="mt-5 mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
-          Results-oriented Software Developer with a product-centric mindset.
-          Proven ability to solve complex problems, design and develop highly
-          efficient and scalable applications, consistently optimize
-          performance, and drive measurable growth. Expert in all the major
-          Cloud providers like
-          <span className=" text-teal-500"> AWS</span> ,
-          <span className=" text-teal-500">Azure</span> and{" "}
-          <span className=" text-teal-500">GCP</span>.
-        </p>
+        <div className="flex justify-center">
+          <p class="mt-5 mb-5 text-gray-500 text-xl dark:text-gray-400 max-w-screen-sm ">
+            Results-oriented Software Developer with a product-centric mindset.
+            Proven ability to solve complex problems, design and develop highly
+            efficient and scalable applications.
+          </p>
+        </div>
 
         <div class="items-center mt-5 justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
           <a
