@@ -35,6 +35,7 @@ import projects from "@/HelperFunctions/PortfolioProjectsData";
 import ResumeComponent from "@/components/ResumeComponent";
 import AspirationComponent from "@/components/AspirationComponent";
 import PortfolioComponent from "@/components/PortfolioComponent";
+import Achievements from "@/components/Achievements";
 
 export default function Home() {
   const { darkMode, setDarkMode } = useDarkMode();
@@ -58,11 +59,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className=" bg-white  md:px-20 lg:px-40 sm:px-2  dark:bg-gray-800">
+      {/* Main section */}
+      <main className="min-h-screen">
+            {/* Nav bar */}
+            <Navbar />
+          {/* Nav bar */}
+      <section className=" bg-white  md:px-20 lg:px-2 sm:px-2  dark:bg-gray-800">
         <section className=" min-h-screen ">
-          {/* Nav bar */}
-          <Navbar />
-          {/* Nav bar */}
+      
 
           {/* Introduction card */}
           <IntroductionCard />
@@ -84,6 +88,9 @@ export default function Home() {
 
         <AspirationComponent />
 
+           {/* section 3  Acheivements */}
+           <Achievements />
+
         {/* section 3 postfolio */}
         <PortfolioComponent />
         {/* Resume section */}
@@ -102,6 +109,7 @@ export default function Home() {
 
         {/* footer  */}
         <Footer />
+      </section>
       </main>
     </div>
   );

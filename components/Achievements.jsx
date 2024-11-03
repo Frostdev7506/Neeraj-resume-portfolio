@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import techStackData from "../HelperFunctions/techStackData";
+import AchievementsData from "../HelperFunctions/AchievementsData";
 import TechStackCards from "./TechStackCards";
 
-function TechStackComponent() {
+function Achievements() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,7 +34,7 @@ function TechStackComponent() {
   return (
     <div className="overflow-hidden">
       <section className="relative">
-        <div className="py-16 px-100 dark:bg-gray-800 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <div className="py-16 dark:bg-gray-800 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ function TechStackComponent() {
             >
               <h2 className="text-5xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 text-transparent bg-clip-text">
-                  Technology Stack
+                  Achievements
                 </span>
               </h2>
               <div className="w-32 h-1 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 mx-auto rounded-full"></div>
@@ -58,7 +58,7 @@ function TechStackComponent() {
               viewport={{ once: true, margin: "-100px" }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10"
             >
-              {techStackData.map((tech, index) => (
+              {AchievementsData.map((tech, index) => (
                 <motion.div
                   key={index}
                   variants={cardVariants}
@@ -97,4 +97,4 @@ function TechStackComponent() {
   );
 }
 
-export default TechStackComponent;
+export default Achievements;

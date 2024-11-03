@@ -22,7 +22,7 @@ const techStackData = [
   {
     imageUrl: aws, // Replace with the actual path
     title: "AWS",
-    description: "Comprehensive cloud computing platform by Amazon.",
+    description: "An Efficient Cloud computing platform by Amazon.",
   },
 ];
 
