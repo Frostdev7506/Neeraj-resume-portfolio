@@ -1,105 +1,109 @@
-import React from "react";
-import aspiration from "../public/FloatingInspiration.svg";
+import React, { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import aspiration from "../public/FloatingInspiration.jsx";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion} from "framer-motion";
+import FloatingInspiration from "../public/FloatingInspiration.jsx";
+import ContactUsComponent from "@/public/ContactUs.jsx";
 
 function AspirationComponent() {
-  const container = {
+  const containerVariants = {
     hidden: { opacity: 0 },
-    show: {
+    visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
+        staggerChildren: 0.2
+      }
+    }
   };
 
-  const item = {
-    hidden: { opacity: 0, x: -20 },
-    show: { 
-      opacity: 1, 
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
+  const itemVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 50,
+      scale: 0.95
     },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
   };
+
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-teal-100 dark:from-gray-900 dark:via-gray-800 dark:to-teal-900">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex justify-center h-max mt-5 lg:mx-auto md:mx-auto sm:mx-auto"
-      >
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.3 }}
-          className="bg-gradient-to-r from-teal-50 to-white border border-gray-200 rounded-lg shadow-lg 
-          dark:from-gray-800 dark:to-gray-700 dark:border-gray-700 lg:h-screen 
-          max-w-full md:h-full overflow-hidden"
-        >
-          <div className="flex flex-col md:flex-row min-h-full h-full">
+    <div className="overflow-hidden">
+      <section className="relative">
+        <div className="py-16 px-4 dark:bg-gray-800 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+          <div className="container mx-auto px-4 py-5">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="w-full md:w-1/2"
+              ref={ref}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16 relative z-10"
             >
-              <Image
-                className="object-cover w-full h-max"
-                src={aspiration}
-                alt="My Aspirations"
-              />
-            </motion.div>
-            <div className="flex flex-col w-full p-4 overflow-auto">
-              <motion.h3
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-3xl md:text-5xl py-1 text-center bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent hover:from-teal-500 hover:to-teal-300 mt-4"
-              >
+              <h2 className="text-5xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 text-transparent bg-clip-text">
-                 My Aspirations
+                  My Aspirations
                 </span>
-              </motion.h3>
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            </motion.div>
+
+            <motion.div
+              ref={ref}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 relative z-10"
+            >
+               <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="hidden sm:flex sm:flex-1"
+        >
+          <FloatingInspiration />
+        </motion.div>
               <motion.ul
-                variants={container}
-                initial="hidden"
-                animate="show"
+                variants={containerVariants}
                 className="list-disc list-inside space-y-5 mt-10"
               >
-                <motion.li variants={item} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
+                <motion.li variants={itemVariants} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
                   Work in a fast-paced environment with effective team.
                 </motion.li>
-                <motion.li variants={item} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
-                  Dabble with the latest state-of-the-art technologies that push
-                  the envelope in achieving breakthroughs.
+                <motion.li variants={itemVariants} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
+                  Dabble with the latest state-of-the-art technologies that push the envelope in achieving breakthroughs.
                 </motion.li>
-                <motion.li variants={item} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
+                <motion.li variants={itemVariants} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
                   Build scalable web applications using the MERN stack.
                 </motion.li>
-                <motion.li variants={item} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
-                  Develop and deploy cloud-native solutions for enhanced
-                  performance and reliability.
+                <motion.li variants={itemVariants} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
+                  Develop and deploy cloud-native solutions for enhanced performance and reliability.
                 </motion.li>
-                <motion.li variants={item} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
-                  Integrate machine learning models to create intelligent and
-                  responsive applications.
+                <motion.li variants={itemVariants} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
+                  Integrate machine learning models to create intelligent and responsive applications.
                 </motion.li>
-                <motion.li variants={item} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
-                  Continuously improve and optimize application performance and
-                  user experience.
+                <motion.li variants={itemVariants} className="text-lg md:text-2xl text-gray-600 dark:text-gray-300">
+                  Continuously improve and optimize application performance and user experience.
                 </motion.li>
               </motion.ul>
-            </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </motion.div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 }
 
