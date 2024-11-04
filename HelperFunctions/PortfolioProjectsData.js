@@ -2,8 +2,8 @@ import lyrics from "../public/lyrics.png";
 import bootcamp from "../public/bootcamp.png";
 import imagegenerator from "../public/image-generator.png";
 import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
+import GreattrMerchant from "../public/GreattrMerchant.png";
+import GreattrLandingPage from "../public/GreattrLandingPage.png";
 
 import student from "../public/student.png";
 const projects = [
@@ -43,34 +43,32 @@ const projects = [
     image: student,
     altText: "Student Attendance Application",
     link: "https://github.com/Frostdev7506/mern-crud-student-attendance",
-    title: "Student Attendance Application",
+    title: "Student Management Application",
     technologies: ["React", "JavaScript", "Mysql", "Express"],
-    colors1: ["cyan", "cyan", "cyan", "cyan"],
-    colors2: ["teal", "teal", "teal", "teal"],
+    colors1: ["cyan", "cyan", "cyan", "cyan","cyan","cyan"],
+    colors2: ["teal", "teal", "teal", "teal", "teal","teal"],
     description:
-      "Web Application to do CRUD operations with student attendance. Created using MERN stack.",
+      "Mern stack Application for teachers to keep track of students attendance and also decide teacher's schedule and personalize student's learning experience.",
   },
   {
-    image: web5,
-    altText: "Project 5",
-    link: "https://example.com",
-    title: "Project 5",
-    technologies: ["React", "JavaScript", "API", "Express"],
-    colors1: ["cyan", "cyan", "cyan", "cyan"],
-    colors2: ["teal", "teal", "teal", "teal"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus justo a augue sagittis, id venenatis risus tincidunt.",
+    image: GreattrMerchant,
+    altText: "Greattr For Merchants",
+    link: "https://play.google.com/store/apps/details?id=com.merchantnative&hl=en_IN",
+    title: "Greattr For Merchants",
+    technologies: ["React", "JavaScript", "REST API", "Express", "Node.js", "MSSQL", "Socket.io"],
+    colors1: ["cyan", "cyan", "cyan", "cyan","cyan","cyan"],
+    colors2: ["teal", "teal", "teal", "teal", "teal","teal"],
+    description:"Application for MSMEs, allowing merchants to offer customers flexible and transparent loan options for purchases",
   },
   {
-    image: web4,
-    altText: "Project 6",
-    link: "https://example.com",
-    title: "Project 6",
-    technologies: ["React", "JavaScript", "API", "Express"],
-    colors1: ["cyan", "cyan", "cyan", "cyan"],
-    colors2: ["teal", "teal", "teal", "teal"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus justo a augue sagittis, id venenatis risus tincidunt.",
+    image: GreattrLandingPage,
+    altText: "Greattr Landing Page",
+    link: "https://www.greattr.com",
+    title: "Landing Page for Greattr Application",
+    technologies: ["React", "JavaScript", "REST API", "Express", "Node.js", "MSSQL", "Socket.io"],
+    colors1: ["cyan", "cyan", "cyan", "cyan","cyan","cyan"],
+    colors2: ["teal", "teal", "teal", "teal", "teal","teal"], 
+    description:"Landing page built using MERN stack with Merchant Registration and using KYC functinality usings OKYC Aadhar Verification.",
   },
   // Add more projects here...
 ];

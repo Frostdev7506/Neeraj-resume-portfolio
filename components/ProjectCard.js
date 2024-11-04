@@ -49,31 +49,32 @@ const ProjectCard = ({ project }) => {
 
       {/* Content */}
       <div className="p-6">
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-          {project.title}
-        </h2>
-        
-        {/* Technology Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.map((tech, index) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-sm rounded-full transition-colors duration-200"
-              style={{
-                backgroundColor: project.colors2[index],
-                color: project.colors1[index],
-              }}
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        
-        {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed h-200">
-          {project.description}
-        </p>
-      </div>
+  <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+    {project.title}
+  </h2>
+
+  {/* Technology Tags */}
+  <div className="flex flex-wrap gap-1 mb-4">
+    {project.technologies.map((tech, index) => (
+      <span
+        key={tech}
+        className="px-3 py-1 text-sm rounded-full transition-colors duration-200"
+        style={{
+          backgroundColor: project.colors2[index],
+          color: project.colors1[index],
+        }}
+      >
+        {tech}
+      </span>
+    ))}
+  </div>
+
+  {/* Description */}
+  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+    {project.description}
+  </p>
+</div>
+
     </div>
   );
 };
