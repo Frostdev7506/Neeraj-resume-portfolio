@@ -1,78 +1,113 @@
 import React, { useEffect, useState } from "react";
-import PdfShare from "../components/PdfShare";
-import ClipLoader from "react-spinners/ClipLoader";
+import { FileText, Download, Loader } from "lucide-react";
 import Iframe from "react-iframe";
+import { motion } from "framer-motion";
 
 function ResumeComponent() {
-  const [documentstate, setDocumentState] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [iframeError, setIframeError] = useState(false);
 
-  let handleIframeLoad = () => {
-    setDocumentState(false);
+  const handleIframeLoad = () => {
+    setLoading(false);
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDocumentState(false);
-    }, 5000); // Change document state to false after 5 seconds
+      setLoading(false);
+    }, 5000);
 
-    return () => clearTimeout(timer); // This function will be called when the component unmounts
+    return () => clearTimeout(timer);
   }, []);
 
-  const override = {
-    margin: "0 auto",
+  const pdfUrl = "https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf";
+  const googleViewerUrl = `https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURIComponent(pdfUrl)}#toolbar=0&scrollbar=0`;
 
-    borderColor: "red",
-  };
   return (
-    <div>
-      <section>
-        <div className=" bg-white px-2 py-2 sm:py-2 md:py-2 rounded-lg dark:bg-gray-800">
-          <div className="flex lg:flex-row md:flex-col sm:flex-col justify-between mb-4 items-center min-h-fit">
-            <h2 className="text-3xl text-gray-500 sm:mx-4 lg:py-5  sm:py-2 md:py-2">
-              Resume
-            </h2>
-
-            <div className="md:mx-4 sm:mx-4">
-              <PdfShare
-                pdfUrl={
-                  "https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
-                }
-              />
+    <div className="min-h-screen bg-gray-900 dark:bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+       <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16 relative z-10"
+            >
+              <h2 className="text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 text-transparent bg-clip-text">
+                 Resume
+                </span>
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            </motion.div>
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+          {/* Header */}
+          <div className="border-b border-gray-200 dark:border-gray-700">
+            <div className="px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
+              <div className="flex items-center gap-3 mb-4 sm:mb-0">
+                <FileText className="w-8 h-8 text-gray-500 dark:text-gray-400" />
+                <h2 className="text-3xl font-semibold text-gray-700 dark:text-gray-300">
+                  Resume
+                </h2>
+              </div>
+              
+              {/* Download Button */}
+              <a
+                href={pdfUrl}
+                download
+                className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 
+                          text-white rounded-lg transition-colors duration-200 gap-2 
+                          shadow-sm hover:shadow-md"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download PDF</span>
+              </a>
             </div>
           </div>
 
-          <div className=" mx-5  lg:h-screen sm:h-screen h-100 ">
-            <>
-              {documentstate ? (
-                <div className="flex mt-8 items-center justify-center h-screen ">
-                  <ClipLoader
-                    color={"red"}
-                    loading={documentstate}
-                    size={300}
-                    width={"80%"}
-                    css={override}
-                    height={"500%"}
-                    aria-label="Loading Spinner"
-                    data-testid="loader"
-                  />
-                </div>
-              ) : (
-                <Iframe
-                  className=" bg-gray-100 lg:h-screen md:h-screen  "
-                  src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf#toolbar=0&scrollbar=0"
-                  // src="https://docs.google.com/viewer?url=https://github.com/Frostdev7506/Auto-resume/raw/build/cv.pdf&embedded=true"
-                  frameBorder="0"
-                  scrolling="no"
-                  onLoad={handleIframeLoad}
-                  layout="responsive"
-                  width={"100%"}
-                  height={"100%"}
-                />
-              )}
-            </>
+          {/* Content */}
+          <div className="relative w-full h-[calc(100vh-12rem)]">
+            {loading && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900">
+                <Loader className="w-12 h-12 text-blue-600 animate-spin mb-4" />
+                <p className="text-gray-600 dark:text-gray-400">Loading resume...</p>
+              </div>
+            )}
+
+            <div className={`w-full h-full transition-opacity duration-300 ${loading ? 'opacity-0' : 'opacity-100'}`}>
+              <Iframe
+                url={googleViewerUrl}
+                className="w-full h-full bg-gray-50 dark:bg-gray-900"
+                frameBorder="0"
+                scrolling="auto"
+                onLoad={handleIframeLoad}
+                loading="lazy"
+                styles={{
+                  height: '100%',
+                  width: '100%',
+                  border: 'none',
+                }}
+              />
+            </div>
+
+            {iframeError && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900">
+                <p className="text-red-600 dark:text-red-400 mb-4">
+                  Failed to load the resume
+                </p>
+                <a
+                  href={pdfUrl}
+                  download
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 
+                            text-white rounded-lg transition-colors duration-200 gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download Instead</span>
+                </a>
+              </div>
+            )}
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

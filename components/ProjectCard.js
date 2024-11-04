@@ -1,71 +1,79 @@
-// ProjectCard.js
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import TechnologyTags from "./TechnologyTags";
-import ClipLoader from "react-spinners/ClipLoader";
+import { ExternalLink } from "lucide-react";
 
 const ProjectCard = ({ project }) => {
-  const [documentstate, setDocumentState] = useState(true);
-  let handleIframeLoad = () => {
-    setDocumentState(false);
-  };
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDocumentState(false);
-    }, 5000); // Change document state to false after 5 seconds
+      setLoading(false);
+    }, 5000);
 
-    return () => clearTimeout(timer); // This function will be called when the component unmounts
+    return () => clearTimeout(timer);
   }, []);
 
-  const override = {
-    margin: "0 auto",
-
-    borderColor: "red",
-  };
   return (
-    <div className="bg-gray-100 basis-1/3 flex-1 w-96 m-4 p-4 rounded-md shadow-lg">
-      <div className="relative">
-        {documentstate ? (
-          <div className="flex mt-8 items-center justify-center ">
-            <ClipLoader
-              color={"red"}
-              loading={documentstate}
-              size={300}
-              width={"80%"}
-              css={override}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          </div>
+    <div className="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full h-400 ">
+      {/* Image Container */}
+      <div className="relative aspect-video overflow-hidden">
+        {loading ? (
+          <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 animate-pulse" />
         ) : (
-          <Image
-            src={project.image}
-            alt={project.altText}
-            className="rounded-md"
-            layout="responsive"
-          />
+          <>
+            <div className="relative w-full h-48">
+              <Image
+                src={project.image}
+                alt={project.altText}
+                layout="fill"
+                objectFit="cover"
+                className="transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white text-gray-900 px-4 py-2 rounded-full transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-gray-100"
+              >
+                View Project
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </>
         )}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-xl bg-gray-900 bg-opacity-75 px-4 py-2 rounded-md hover:bg-opacity-100"
-          >
-            View Project
-          </a>
-        </div>
       </div>
-      <h2 className="text-2xl text-gray-500 font-medium my-2">
-        {project.title}
-      </h2>
-      <TechnologyTags
-        technologies={project.technologies}
-        colors1={project.colors1}
-        colors2={project.colors2}
-      />
-      <p className="text-gray-500">{project.description}</p>
+
+      {/* Content */}
+      <div className="p-6">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+          {project.title}
+        </h2>
+        
+        {/* Technology Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.technologies.map((tech, index) => (
+            <span
+              key={tech}
+              className="px-3 py-1 text-sm rounded-full transition-colors duration-200"
+              style={{
+                backgroundColor: project.colors2[index],
+                color: project.colors1[index],
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        
+        {/* Description */}
+        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed h-200">
+          {project.description}
+        </p>
+      </div>
     </div>
   );
 };

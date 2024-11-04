@@ -70,7 +70,7 @@ function PortfolioComponent() {
                 >
                   <div className="group">
                     <div className="absolute inset-0 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-300"></div>
-                    <div className="relative bg-white dark:bg-gray-800 rounded-lg transform transition duration-300 hover:shadow-xl">
+                    <div className="relative bg-white dark:bg-gray-800 rounded-lg transform transition duration-300 hover:shadow-xl mx-auto">
                       <ProjectCard project={project} />
                     </div>
                   </div>

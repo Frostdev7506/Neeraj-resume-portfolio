@@ -26,7 +26,7 @@ const projects = [
     technologies: ["React", "JavaScript", "Mapbox API", "Express"],
     colors1: ["cyan", "cyan", "cyan", "cyan"],
     colors2: ["teal", "teal", "teal", "teal"],
-    description: "A landing Page for a Web-Development Bootcamp.",
+    description: "A landing Page for a Web-Development Bootcamp. Created using react and Mapbox API.",
   },
   {
     image: imagegenerator,

@@ -91,7 +91,7 @@ export default function Home() {
            {/* section 3  Acheivements */}
            <Achievements />
 
-        {/* section 3 postfolio */}
+        {/* section 4 postfolio */}
         <PortfolioComponent />
         {/* Resume section */}
         <ResumeComponent />
