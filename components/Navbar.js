@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { BsArrowUpCircleFill } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
-import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsSunFill, BsDownload } from "react-icons/bs";
 import { useDarkMode } from "../context/DarkModeContext";
 
 function Navbar() {
@@ -92,9 +93,15 @@ function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
+                download //add download attribute to trigger download
                 className="relative inline-flex items-center px-6 py-3 overflow-hidden text-white rounded-lg group bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
               >
-                <span className="relative">Resume</span>
+                <span className="flex items-center gap-2">
+                  {" "}
+                  {/* Added flex and gap */}
+                  <BsDownload className="text-lg" /> {/* Added download icon */}
+                  Resume
+                </span>
                 <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="h-full w-full bg-gradient-to-r from-cyan-400 to-teal-400 blur-lg transform scale-150"></div>
                 </div>

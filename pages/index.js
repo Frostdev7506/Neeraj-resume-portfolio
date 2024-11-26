@@ -26,6 +26,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 
+import { BsArrowUpCircleFill } from "react-icons/bs";
 import { useDarkMode } from "../context/DarkModeContext";
 import ProjectCard from "@/components/ProjectCard";
 import Navbar from "@/components/Navbar";
@@ -36,9 +37,30 @@ import ResumeComponent from "@/components/ResumeComponent";
 import AspirationComponent from "@/components/AspirationComponent";
 import PortfolioComponent from "@/components/PortfolioComponent";
 import Achievements from "@/components/Achievements";
+import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
+import { FrontPage } from "@/components/FrontPage";
 
 export default function Home() {
   const { darkMode, setDarkMode } = useDarkMode();
+
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -61,55 +83,73 @@ export default function Home() {
       </Head>
       {/* Main section */}
       <main className="min-h-screen">
-            {/* Nav bar */}
-            <Navbar />
-          {/* Nav bar */}
-      <section className=" bg-white  md:px-20 lg:px-2 sm:px-2  dark:bg-gray-800">
-        <section className=" min-h-screen ">
-      
+        {/* Nav bar */}
+        <Navbar />
+        {/* Nav bar */}
+        <div className="h-screen flex items-center justify-center bg-red-500 dark:bg-gray-800">
+          <FrontPage />
+        </div>
 
-          {/* Introduction card */}
-          <IntroductionCard />
-        </section>
+        <section className="   md:px-20 lg:px-2 sm:px-2  dark:bg-gray-800">
+          <section className=" min-h-screen ">
+            {/* Introduction card */}
 
-        <section>
-          {/* Button to the Blog Page */}
-          {/* <div className="flex justify-center mt-6">
+            <IntroductionCard />
+          </section>
+
+          <section>
+            {/* Button to the Blog Page */}
+            {/* <div className="flex justify-center mt-6">
             <Link href="/blog">
               <button className="bg-teal-500 text-white px-6 py-3 rounded-md hover:bg-teal-600">
                 Visit Blog
               </button>
             </Link>
           </div> */}
+          </section>
+
+          {/* section 2  TechStack */}
+          <TechStackComponent />
+
+          <AspirationComponent />
+
+          {/* section 3  Acheivements */}
+          <Achievements />
+
+          {/* section 4 postfolio */}
+          <PortfolioComponent />
+          {/* Resume section */}
+          <ResumeComponent />
+          {/* github widget */}
+          <section>
+            <GitHubWidget />
+          </section>
+
+          {/* Contact Me  */}
+
+          <section id="contactme">
+            <ContactForm />
+            <ToastContainer />
+          </section>
+
+          <div>
+            {showButton && (
+              <button
+                onClick={scrollToTop}
+                className="fixed z-50 bottom-10 right-10 p-4 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 text-transparent text-white rounded-full shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out" // Added transition
+                aria-label="Back to Top"
+              >
+                <BsArrowUpCircleFill className="text-3xl" />{" "}
+                {/* Use the icon */}
+                <span className="sr-only">Back to Top</span>{" "}
+                {/*added span tag for accessibilty*/}
+              </button>
+            )}
+          </div>
+
+          {/* footer  */}
+          <Footer />
         </section>
-
-        {/* section 2  TechStack */}
-        <TechStackComponent />
-
-        <AspirationComponent />
-
-           {/* section 3  Acheivements */}
-           <Achievements />
-
-        {/* section 4 postfolio */}
-        <PortfolioComponent />
-        {/* Resume section */}
-        <ResumeComponent />
-        {/* github widget */}
-        <section>
-          <GitHubWidget />
-        </section>
-
-        {/* Contact Me  */}
-
-        <section id="contactme">
-          <ContactForm />
-          <ToastContainer />
-        </section>
-
-        {/* footer  */}
-        <Footer />
-      </section>
       </main>
     </div>
   );
