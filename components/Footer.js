@@ -1,115 +1,131 @@
+// components/Footer.js
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useDarkMode } from '../context/DarkModeContext';
+import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/fa';
+
+// Data for navigation and social links for easier maintenance
+const navLinks = [
+  { href: '/#about', label: 'About' },
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/#contact', label: 'Contact' },
+];
+
+const socialLinks = [
+  { href: 'https://github.com/Frostdev7506', label: 'GitHub', icon: FaGithub },
+  { href: 'https://www.linkedin.com/in/your-linkedin/', label: 'LinkedIn', icon: FaLinkedin },
+  { href: 'https://twitter.com/your-twitter', label: 'Twitter', icon: FaTwitter },
+];
+
+// Framer Motion Variants for optimized animations
+const footerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  },
+};
 
 const Footer = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
-    <motion.footer 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="p-4 px-5 mt-5 bg-gradient-to-r from-white via-teal-50 to-white rounded-lg shadow-lg 
-      shadow-gray-500/50 md:px-6 md:py-8 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800"
+    <motion.footer
+      variants={footerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-50px" }}
+      className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 border-t border-gray-100 dark:border-gray-800 backdrop-blur-sm"
     >
-      <div className="sm:flex sm:items-center sm:justify-between">
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-        >
-          <Link href="https://github.com/Frostdev7506" className="flex items-center mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
-            <motion.span 
-              className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white"
-              whileHover={{ color: '#0D9488' }}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        {/* Top section: Logo and Navigation */}
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+          <motion.div variants={itemVariants} className="flex-shrink-0">
+            <Link
+              href="/"
+              className="focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-md transition-transform hover:scale-105 active:scale-95"
             >
-              
-              <p className="text-xl bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 text-transparent bg-clip-text font-burtons">
+              <h2 className="text-2xl bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 text-transparent bg-clip-text font-burtons font-bold tracking-tight">
                 developedbyneeraj
-              </p>
-            </motion.span>
-          </Link>
-        </motion.div>
+              </h2>
+            </Link>
+          </motion.div>
 
-        <motion.ul 
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="flex flex-wrap items-center mb-6 text-sm sm:mb-0"
-        >
-          <motion.li variants={item}>
-            <Link href="/#about" className="mr-4 md:mr-6 relative group focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
-              <span className="text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-                About
-              </span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </motion.li>
-          <motion.li variants={item}>
-            <Link href="#" className="mr-4 md:mr-6 relative group focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
-              <span className="text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-                Privacy Policy
-              </span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </motion.li>
-          <motion.li variants={item}>
-            <Link href="/#contactme" className="relative group focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
-              <span className="text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-                Contact
-              </span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-          </motion.li>
-        </motion.ul>
+          <motion.nav
+            variants={itemVariants}
+            className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 font-medium relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-md px-1 py-1"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-blue-400 group-hover:w-full transition-all duration-300 ease-out"></span>
+              </Link>
+            ))}
+          </motion.nav>
+        </div>
+
+        {/* Divider */}
+        <motion.div
+          variants={itemVariants}
+          className="my-8 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent"
+        />
+
+        {/* Bottom section: Copyright and Socials */}
+        <div className="flex flex-col-reverse md:flex-row justify-between items-center space-y-6 md:space-y-0 gap-4">
+          <motion.p
+            variants={itemVariants}
+            className="text-sm text-gray-600 dark:text-gray-400 text-center flex items-center"
+          >
+            © {new Date().getFullYear()} Made with <FaHeart className="text-red-500 mx-1" /> by Neeraj Butola™
+          </motion.p>
+
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center space-x-5"
+          >
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              );
+            })}
+          </motion.div>
+        </div>
       </div>
-
-      <motion.hr 
-        initial={{ opacity: 0, scaleX: 0 }}
-        animate={{ opacity: 1, scaleX: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" 
-      />
-
-      <motion.span 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
-      >
-        © {" "}
-        <Link 
-          href="https://github.com/Frostdev7506" 
-          className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm"
-        >
-          NeerajButola™
-        </Link>
-        . All Rights Reserved.
-      </motion.span>
     </motion.footer>
   );
 };
 
-export default Footer;
+export default React.memo(Footer);
