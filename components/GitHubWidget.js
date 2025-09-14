@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react"; // 1. Import useCallback
 import axios from "axios";
 import { Octokit } from "octokit";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,7 +23,7 @@ const GitHubWidget = () => {
   };
 
   const cardVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       y: 50,
       scale: 0.95
@@ -51,7 +51,10 @@ const GitHubWidget = () => {
       });
   }, []);
 
-  const getLanguages = async (repoName) => {
+
+
+
+  const getLanguages = useCallback(async (repoName) => {
     const octokit = new Octokit({
       auth: "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",
     });
@@ -70,17 +73,22 @@ const GitHubWidget = () => {
 
       return Object.keys(response.data);
     } catch (error) {
-      console.error(error);
+      console.error(`Error fetching languages for ${repoName}:`, error);
       return [];
     }
-  };
+  }, []);
 
   useEffect(() => {
+    // This check prevents the effect from re-running once languages are fetched.
+    if (repos.length === 0 || repos[0]?.languages) {
+      return;
+    }
+
     const fetchLanguages = async () => {
       const reposWithLanguages = await Promise.all(
         repos.map(async (repo) => {
           const languages = await getLanguages(repo.name);
-          // Add languages to the set of all technologies
+          // 2. Reverted to your original (and perfectly correct) way of updating the Set state.
           languages.forEach(lang => setAllTechnologies(prev => new Set([...prev, lang])));
           return {
             ...repo,
@@ -88,18 +96,19 @@ const GitHubWidget = () => {
           };
         })
       );
-
+      // 3. Ensure both states are updated to stay in sync after fetching languages.
       setRepos(reposWithLanguages);
       setFilteredRepos(reposWithLanguages);
     };
 
     fetchLanguages();
-  }, [repos.length]);
+    // 4. Correct dependency array to satisfy the linter.
+  }, [repos, getLanguages]);
 
   // Filter repos by selected technology
   useEffect(() => {
     if (selectedTech) {
-      const filtered = repos.filter(repo => 
+      const filtered = repos.filter(repo =>
         repo.languages && repo.languages.includes(selectedTech)
       );
       setFilteredRepos(filtered);
@@ -141,17 +150,15 @@ const GitHubWidget = () => {
 
             {/* Technology Filter Tags */}
             <div className="mb-8 relative z-10">
-              {/* <p className="text-gray-600 dark:text-gray-300 mb-3 text-center">Filter by technology:</p>s */}
               <div className="flex flex-wrap justify-center gap-2">
                 {[...allTechnologies].map((tech) => (
                   <button
                     key={tech}
                     onClick={() => handleTechClick(tech)}
-                    className={`px-3 py-1 rounded text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                      selectedTech === tech
-                        ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
-                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-gray-600 focus:ring-gray-500 dark:focus:ring-gray-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
-                    }`}
+                    className={`px-3 py-1 rounded text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${selectedTech === tech
+                      ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-gray-600 focus:ring-gray-500 dark:focus:ring-gray-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                      }`}
                   >
                     {tech}
                   </button>
@@ -172,7 +179,7 @@ const GitHubWidget = () => {
                   <motion.div
                     key={repo.id}
                     variants={cardVariants}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.02,
                       transition: { duration: 0.2 }
                     }}
@@ -183,7 +190,7 @@ const GitHubWidget = () => {
                       <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
                         {repo.name}
                       </h3>
-                      
+
                       <div className="mb-4">
                         {repo.description ? (
                           <p className="text-gray-600 dark:text-gray-300">{repo.description}</p>
@@ -237,11 +244,10 @@ const GitHubWidget = () => {
                 <button
                   onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                   disabled={currentPage === 1}
-                  className={`px-4 py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                    currentPage === 1
-                      ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg hover:from-teal-600 hover:to-blue-600 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
-                  }`}
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${currentPage === 1
+                    ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg hover:from-teal-600 hover:to-blue-600 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                    }`}
                 >
                   Previous
                 </button>
@@ -250,11 +256,10 @@ const GitHubWidget = () => {
                     <button
                       key={index + 1}
                       onClick={() => setCurrentPage(index + 1)}
-                      className={`w-10 h-10 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                        currentPage === index + 1
-                          ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
-                          : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-gray-600 focus:ring-gray-500 dark:focus:ring-gray-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
-                      }`}
+                      className={`w-10 h-10 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${currentPage === index + 1
+                        ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-gray-600 focus:ring-gray-500 dark:focus:ring-gray-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                        }`}
                     >
                       {index + 1}
                     </button>
@@ -263,11 +268,10 @@ const GitHubWidget = () => {
                 <button
                   onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                   disabled={currentPage === totalPages}
-                  className={`px-4 py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                    currentPage === totalPages
-                      ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg hover:from-teal-600 hover:to-blue-600 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
-                  }`}
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${currentPage === totalPages
+                    ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg hover:from-teal-600 hover:to-blue-600 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                    }`}
                 >
                   Next
                 </button>
