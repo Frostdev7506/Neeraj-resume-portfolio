@@ -40,7 +40,7 @@ const Footer = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          <Link href="https://github.com/Frostdev7506" className="flex items-center mb-4 sm:mb-0">
+          <Link href="https://github.com/Frostdev7506" className="flex items-center mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
             <motion.span 
               className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white"
               whileHover={{ color: '#0D9488' }}
@@ -60,7 +60,7 @@ const Footer = () => {
           className="flex flex-wrap items-center mb-6 text-sm sm:mb-0"
         >
           <motion.li variants={item}>
-            <Link href="/#about" className="mr-4 md:mr-6 relative group">
+            <Link href="/#about" className="mr-4 md:mr-6 relative group focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
               <span className="text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
                 About
               </span>
@@ -68,7 +68,7 @@ const Footer = () => {
             </Link>
           </motion.li>
           <motion.li variants={item}>
-            <Link href="#" className="mr-4 md:mr-6 relative group">
+            <Link href="#" className="mr-4 md:mr-6 relative group focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
               <span className="text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
                 Privacy Policy
               </span>
@@ -76,7 +76,7 @@ const Footer = () => {
             </Link>
           </motion.li>
           <motion.li variants={item}>
-            <Link href="/#contactme" className="relative group">
+            <Link href="/#contactme" className="relative group focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm">
               <span className="text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
                 Contact
               </span>
@@ -102,7 +102,7 @@ const Footer = () => {
         © {" "}
         <Link 
           href="https://github.com/Frostdev7506" 
-          className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300"
+          className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 rounded-sm"
         >
           NeerajButola™
         </Link>

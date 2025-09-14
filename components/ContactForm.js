@@ -105,9 +105,10 @@ const ContactForm = () => {
                 Name
               </label>
               <input
-                className="shadow appearance-none border dark:bg-gray-600 dark:text-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                className="shadow appearance-none border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 bg-white rounded-lg w-full py-3 px-4 text-gray-700 dark:text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-400"
                 type="text"
                 name="user_name"
+                placeholder="Enter your name"
               />
               <AnimatePresence>
                 {errors.name && (
@@ -115,7 +116,7 @@ const ContactForm = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="text-red-500 text-xs italic mt-1"
+                    className="text-red-500 dark:text-red-400 text-xs italic mt-1 font-medium"
                   >
                     {errors.name}
                   </motion.p>
@@ -134,9 +135,10 @@ const ContactForm = () => {
                 Email
               </label>
               <input
-                className="shadow appearance-none border dark:bg-gray-600 dark:text-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                className="shadow appearance-none border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 bg-white rounded-lg w-full py-3 px-4 text-gray-700 dark:text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-400"
                 type="email"
                 name="user_email"
+                placeholder="Enter your email"
               />
               <AnimatePresence>
                 {errors.email && (
@@ -144,7 +146,7 @@ const ContactForm = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="text-red-500 text-xs italic mt-1"
+                    className="text-red-500 dark:text-red-400 text-xs italic mt-1 font-medium"
                   >
                     {errors.email}
                   </motion.p>
@@ -163,9 +165,10 @@ const ContactForm = () => {
                 Message
               </label>
               <textarea
-                className="shadow appearance-none border dark:bg-gray-600 dark:text-gray-200 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                className="shadow appearance-none border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 bg-white rounded-lg w-full py-3 px-4 text-gray-700 dark:text-gray-100 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-400 resize-vertical"
                 name="message"
                 rows={4}
+                placeholder="Enter your message"
               />
               <AnimatePresence>
                 {errors.message && (
@@ -173,7 +176,7 @@ const ContactForm = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="text-red-500 text-xs italic mt-1"
+                    className="text-red-500 dark:text-red-400 text-xs italic mt-1 font-medium"
                   >
                     {errors.message}
                   </motion.p>
@@ -187,7 +190,7 @@ const ContactForm = () => {
               whileHover="hover"
               whileTap="tap"
               animate={isSubmitting ? "loading" : "idle"}
-              className="relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all duration-300"
+              className="relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-300 shadow-lg hover:shadow-teal-500/25"
               type="submit"
               disabled={isSubmitting}
             >

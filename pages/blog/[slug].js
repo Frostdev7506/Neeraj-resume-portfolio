@@ -60,7 +60,7 @@ export default function BlogPost({ post, aposts }) {
   const url = `${'https://neerajbutola.netlify.app'}${router.asPath}`
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <div className="flex flex-col min-h-screen bg-white text-gray-500 dark:bg-gray-800">
         <nav className="flex justify-between mt-7 md:px-10 lg:px-10 sm:px-5">
           <div className="flex items-center">

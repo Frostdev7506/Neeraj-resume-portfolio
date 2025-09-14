@@ -63,7 +63,7 @@ function Navbar() {
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg bg-gray-100/80 dark:bg-gray-800/80 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 shadow-sm"
+                className="p-2 rounded-lg bg-gray-100/80 dark:bg-gray-800/80 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900"
                 aria-label="Toggle dark mode"
               >
                 <AnimatePresence mode="wait" initial={false}>
@@ -94,7 +94,7 @@ function Navbar() {
                 whileTap={{ scale: 0.95 }}
                 href="https://raw.githubusercontent.com/Frostdev7506/Auto-resume/build/Neeraj_Butola_Resume.pdf"
                 download //add download attribute to trigger download
-                className="relative inline-flex items-center px-6 py-3 overflow-hidden text-white rounded-lg group bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+                className="relative inline-flex items-center px-6 py-3 overflow-hidden text-white rounded-lg group bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900"
               >
                 <span className="flex items-center gap-2">
                   {" "}

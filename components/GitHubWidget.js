@@ -147,10 +147,10 @@ const GitHubWidget = () => {
                   <button
                     key={tech}
                     onClick={() => handleTechClick(tech)}
-                    className={`px-3 py-1 rounded text-sm font-medium transition-all duration-200 ${
+                    className={`px-3 py-1 rounded text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                       selectedTech === tech
-                        ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105'
-                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105'
+                        ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-gray-600 focus:ring-gray-500 dark:focus:ring-gray-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
                     }`}
                   >
                     {tech}
@@ -219,7 +219,9 @@ const GitHubWidget = () => {
 
                       <a
                         href={repo.html_url}
-                        className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-500 text-white font-medium transition-transform hover:scale-105 hover:shadow-lg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
                       >
                         View on GitHub
                       </a>
@@ -235,10 +237,10 @@ const GitHubWidget = () => {
                 <button
                   onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                   disabled={currentPage === 1}
-                  className={`px-4 py-2 rounded-lg ${
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                     currentPage === 1
-                      ? 'bg-gray-300 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg transition-shadow'
+                      ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg hover:from-teal-600 hover:to-blue-600 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
                   }`}
                 >
                   Previous
@@ -248,10 +250,10 @@ const GitHubWidget = () => {
                     <button
                       key={index + 1}
                       onClick={() => setCurrentPage(index + 1)}
-                      className={`w-10 h-10 rounded-lg transition-all duration-200 ${
+                      className={`w-10 h-10 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                         currentPage === index + 1
-                          ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105'
-                          : 'bg-gray-200 dark:bg-gray-700 hover:scale-105'
+                          ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg scale-105 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
+                          : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-gray-600 focus:ring-gray-500 dark:focus:ring-gray-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
                       }`}
                     >
                       {index + 1}
@@ -261,10 +263,10 @@ const GitHubWidget = () => {
                 <button
                   onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                   disabled={currentPage === totalPages}
-                  className={`px-4 py-2 rounded-lg ${
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                     currentPage === totalPages
-                      ? 'bg-gray-300 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg transition-shadow'
+                      ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-teal-500 to-blue-500 text-white hover:shadow-lg hover:from-teal-600 hover:to-blue-600 focus:ring-teal-500 dark:focus:ring-teal-400 focus:ring-offset-white dark:focus:ring-offset-gray-800'
                   }`}
                 >
                   Next

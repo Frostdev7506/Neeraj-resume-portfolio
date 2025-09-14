@@ -1,7 +1,7 @@
 import lyrics from "../public/lyrics.png";
 import bootcamp from "../public/bootcamp.png";
 import imagegenerator from "../public/image-generator.png";
-import web4 from "../public/web4.png";
+
 import GreattrMerchant from "../public/GreattrMerchant.png";
 import GreattrLandingPage from "../public/GreattrLandingPage.png";
 
@@ -45,8 +45,8 @@ const projects = [
     link: "https://github.com/Frostdev7506/mern-crud-student-attendance",
     title: "Student Management Application",
     technologies: ["React", "JavaScript", "Mysql", "Express"],
-    colors1: ["cyan", "cyan", "cyan", "cyan","cyan","cyan"],
-    colors2: ["teal", "teal", "teal", "teal", "teal","teal"],
+    colors1: ["cyan", "cyan", "cyan", "cyan", "cyan", "cyan"],
+    colors2: ["teal", "teal", "teal", "teal", "teal", "teal"],
     description:
       "Mern stack Application for teachers to keep track of students attendance and also decide teacher's schedule and personalize student's learning experience.",
   },
@@ -56,9 +56,9 @@ const projects = [
     link: "https://play.google.com/store/apps/details?id=com.merchantnative&hl=en_IN",
     title: "Greattr For Merchants",
     technologies: ["React", "JavaScript", "REST API", "Express", "Node.js", "MSSQL", "Socket.io"],
-    colors1: ["cyan", "cyan", "cyan", "cyan","cyan","cyan"],
-    colors2: ["teal", "teal", "teal", "teal", "teal","teal"],
-    description:"Application for MSMEs, allowing merchants to offer customers flexible and transparent loan options for purchases",
+    colors1: ["cyan", "cyan", "cyan", "cyan", "cyan", "cyan"],
+    colors2: ["teal", "teal", "teal", "teal", "teal", "teal"],
+    description: "Application for MSMEs, allowing merchants to offer customers flexible and transparent loan options for purchases",
   },
   {
     image: GreattrLandingPage,
@@ -66,9 +66,9 @@ const projects = [
     link: "https://www.greattr.com",
     title: "Landing Page for Greattr Application",
     technologies: ["React", "JavaScript", "REST API", "Express", "Node.js", "MSSQL", "Socket.io"],
-    colors1: ["cyan", "cyan", "cyan", "cyan","cyan","cyan"],
-    colors2: ["teal", "teal", "teal", "teal", "teal","teal"], 
-    description:"Landing page built using MERN stack with Merchant Registration and using KYC functinality usings OKYC Aadhar Verification.",
+    colors1: ["cyan", "cyan", "cyan", "cyan", "cyan", "cyan"],
+    colors2: ["teal", "teal", "teal", "teal", "teal", "teal"],
+    description: "Landing page built using MERN stack with Merchant Registration and using KYC functinality usings OKYC Aadhar Verification.",
   },
   // Add more projects here...
 ];

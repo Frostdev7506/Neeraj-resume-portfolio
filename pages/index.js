@@ -14,11 +14,6 @@ import ContactForm from "../components/ContactForm";
 import TechStackCards from "@/components/TechStackCards";
 import TechnologyTags from "../components/TechnologyTags";
 
-import web1 from "../public/web1.png";
-
-import web2 from "../public/web2.png";
-
-import web3 from "../public/web3.png";
 
 import github from "../public/github.png";
 import js from "../public/javascript.png";
@@ -63,7 +58,7 @@ export default function Home() {
   };
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <Head>
         <title>Portfolio Website</title>
         <meta
@@ -86,16 +81,17 @@ export default function Home() {
         {/* Nav bar */}
         <Navbar />
         {/* Nav bar */}
-        <div className="h-screen flex items-center justify-center bg-red-500 dark:bg-gray-800">
-          <FrontPage />
-        </div>
 
-        <section className="   md:px-20 lg:px-2 sm:px-2  dark:bg-gray-800">
+
+        <section className="   md:px-20 lg:px-2 sm:px-2 bg-gray-50 dark:bg-gray-800">
           <section className=" min-h-screen ">
             {/* Introduction card */}
 
             <IntroductionCard />
           </section>
+
+          {/* FrontPage section */}
+
 
           <section>
             {/* Button to the Blog Page */}

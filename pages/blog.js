@@ -29,7 +29,7 @@ export default function Blog({ posts }) {
   // Limit the number of posts to 2
   const limitedPosts = posts
   return (
-    <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''} dark:bg-gray-800`}>
+    <div className="flex flex-col min-h-screen dark:bg-gray-800">
       <div className="bg-white flex-grow dark:bg-gray-800">
         <nav className="  flex justify-between  mt-10 px-10  ">
 

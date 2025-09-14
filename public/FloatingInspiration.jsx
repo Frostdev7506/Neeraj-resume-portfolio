@@ -6,7 +6,7 @@ const FloatingInspiration = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 500 450"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    xmlnsSvgjs="http://svgjs.com/svgjs"
+
     {...props}
   >
     <style>
