@@ -96,8 +96,9 @@ function IntroductionCard() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                Hi, I'm
+                Hi, I&apos;m
               </motion.span>
+
               <motion.span
                 className="block bg-gradient-to-r from-teal-500 via-blue-500 to-purple-600 text-transparent bg-clip-text relative"
                 initial={{ opacity: 0, x: -50 }}
