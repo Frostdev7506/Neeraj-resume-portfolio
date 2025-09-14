@@ -20,6 +20,9 @@ const TechStackCards = ({ imageUrl, title, description }) => {
             className="max-h-12 max-w-12 object-contain relative z-10 transition-transform duration-300 group-hover:scale-110"
             width={48}
             height={48}
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjRjNGNEY2Ii8+Cjwvc3ZnPgo="
           />
         </div>
 

@@ -1,53 +1,54 @@
 import Head from "next/head";
-import Link from "next/link";
-
-import { icons } from "react-icons";
-
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 
-import { IoLogoNodejs, DiLinux, DiReact, FaAws } from "react-icons";
-
-import Image from "next/image";
-
-import GitHubWidget from "../components/GitHubWidget";
-import ContactForm from "../components/ContactForm";
-import TechStackCards from "@/components/TechStackCards";
-import TechnologyTags from "../components/TechnologyTags";
-
-
-import github from "../public/github.png";
-import js from "../public/javascript.png";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Footer from "../components/Footer";
-
-import { BsArrowUpCircleFill } from "react-icons/bs";
-import { useDarkMode } from "../context/DarkModeContext";
-import ProjectCard from "@/components/ProjectCard";
+// Static imports for above-the-fold content
 import Navbar from "@/components/Navbar";
 import IntroductionCard from "@/components/IntroductionCard";
-import TechStackComponent from "@/components/TechStackComponent";
-import projects from "@/HelperFunctions/PortfolioProjectsData";
-import ResumeComponent from "@/components/ResumeComponent";
-import AspirationComponent from "@/components/AspirationComponent";
-import PortfolioComponent from "@/components/PortfolioComponent";
-import Achievements from "@/components/Achievements";
-import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
-import { FrontPage } from "@/components/FrontPage";
+import Footer from "../components/Footer";
+
+// Dynamic imports for below-the-fold content
+const TechStackComponent = dynamic(() => import("@/components/TechStackComponent"), {
+  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg" />
+});
+const AspirationComponent = dynamic(() => import("@/components/AspirationComponent"), {
+  loading: () => <div className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg" />
+});
+const Achievements = dynamic(() => import("@/components/Achievements"), {
+  loading: () => <div className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg" />
+});
+const PortfolioComponent = dynamic(() => import("@/components/PortfolioComponent"), {
+  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg" />
+});
+const ResumeComponent = dynamic(() => import("@/components/ResumeComponent"), {
+  loading: () => <div className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg" />
+});
+const GitHubWidget = dynamic(() => import("../components/GitHubWidget"), {
+  loading: () => <div className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg" />
+});
+const ContactForm = dynamic(() => import("../components/ContactForm"), {
+  loading: () => <div className="h-96 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg" />
+});
+
+import { BsArrowUpCircleFill } from "react-icons/bs";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
-  const { darkMode, setDarkMode } = useDarkMode();
 
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
         setShowButton(true);
       } else {
         setShowButton(false);
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {

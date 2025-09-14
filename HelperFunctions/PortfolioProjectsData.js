@@ -1,14 +1,6 @@
-import lyrics from "../public/lyrics.png";
-import bootcamp from "../public/bootcamp.png";
-import imagegenerator from "../public/image-generator.png";
-
-import GreattrMerchant from "../public/GreattrMerchant.png";
-import GreattrLandingPage from "../public/GreattrLandingPage.png";
-
-import student from "../public/student.png";
 const projects = [
   {
-    image: lyrics,
+    image: "/lyrics.png",
     altText: "Lyriks Music Streaming application",
     link: "https://github.com/Frostdev7506/Lyriks",
     title: "Lyriks (Music Streaming application)",
@@ -19,7 +11,7 @@ const projects = [
       "Music streaming application created using React and Shazam-core Api.",
   },
   {
-    image: bootcamp,
+    image: "/bootcamp.png",
     altText: "Frontend-Webdevelopment-Bootcamp",
     link: "https://github.com/Frostdev7506/Frontend-Webdevelopment-Bootcamp",
     title: "Web Development Bootcamp",
@@ -29,7 +21,7 @@ const projects = [
     description: "A landing Page for a Web-Development Bootcamp. Created using react and Mapbox API.",
   },
   {
-    image: imagegenerator,
+    image: "/image-generator.png",
     altText: "OpenAI Image Generator",
     link: "https://github.com/Frostdev7506/open-AI-Image-Generator",
     title: "OpenAI Image Generator",
@@ -40,7 +32,7 @@ const projects = [
       "This is a simple image generator built with Node.js and Express that uses OpenAI Dall-E AI-model to generate images.",
   },
   {
-    image: student,
+    image: "/student.png",
     altText: "Student Attendance Application",
     link: "https://github.com/Frostdev7506/mern-crud-student-attendance",
     title: "Student Management Application",
@@ -51,7 +43,7 @@ const projects = [
       "Mern stack Application for teachers to keep track of students attendance and also decide teacher's schedule and personalize student's learning experience.",
   },
   {
-    image: GreattrMerchant,
+    image: "/GreattrMerchant.png",
     altText: "Greattr For Merchants",
     link: "https://play.google.com/store/apps/details?id=com.merchantnative&hl=en_IN",
     title: "Greattr For Merchants",
@@ -61,7 +53,7 @@ const projects = [
     description: "Application for MSMEs, allowing merchants to offer customers flexible and transparent loan options for purchases",
   },
   {
-    image: GreattrLandingPage,
+    image: "/GreattrLandingPage.png",
     altText: "Greattr Landing Page",
     link: "https://www.greattr.com",
     title: "Landing Page for Greattr Application",
@@ -70,7 +62,6 @@ const projects = [
     colors2: ["teal", "teal", "teal", "teal", "teal", "teal"],
     description: "Landing page built using MERN stack with Merchant Registration and using KYC functinality usings OKYC Aadhar Verification.",
   },
-  // Add more projects here...
 ];
 
 export default projects;

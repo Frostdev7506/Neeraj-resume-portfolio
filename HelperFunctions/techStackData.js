@@ -1,87 +1,71 @@
-import react from "../public/react.svg";
-import azure from "../public/azure.png";
-import node from "../public/nodejs.svg";
-import mysql from "../public/mysql.svg";
-import aws from "../public/aws.svg";
-import jest from "../public/jest.svg"
-import python from "../public/python.svg"
-import mongodb from "../public/mongodb.svg"
-import docker from "../public/docker.svg"
-import express from "../public/express.svg"
-import redux from "../public/redux.svg"
-import sql from "../public/sql.svg"
-import git from "../public/git.svg"
 const techStackData = [
   {
-    imageUrl: react,
+    imageUrl: "/react.svg",
     title: "React.js",
     description: "A JavaScript library for building user interfaces.",
   },
   {
-    imageUrl: node,
+    imageUrl: "/nodejs.svg",
     title: "Node.js",
     description: "JavaScript runtime for server-side applications.",
   },
   {
-    imageUrl: mysql,
+    imageUrl: "/mysql.svg",
     title: "MySQL",
     description: "Open-source relational database management system.",
   },
   {
-    imageUrl: mongodb,
+    imageUrl: "/mongodb.svg",
     title: "MongoDB",
     description: "NoSQL database for scalable applications.",
   },
   {
-    imageUrl: sql,
+    imageUrl: "/sql.svg",
     title: "PostgreSQL",
     description: "Advanced open-source relational database system.",
   },
   {
-    imageUrl: sql,
+    imageUrl: "/sql.svg",
     title: "MSSQL",
     description: "Microsoft SQL Server relational database system.",
   },
   {
-    imageUrl: aws,
+    imageUrl: "/aws.svg",
     title: "AWS",
     description: "An efficient cloud computing platform by Amazon.",
   },
-
   {
-    imageUrl: express,
+    imageUrl: "/express.svg",
     title: "Express.js",
     description: "Fast, unopinionated, minimalist web framework for Node.js.",
   },
   {
-    imageUrl: redux,
+    imageUrl: "/redux.svg",
     title: "Redux",
     description: "State container for JavaScript apps.",
   },
-
   {
-    imageUrl: react,
+    imageUrl: "/react.svg",
     title: "React Native",
     description: "Framework for building native apps using React.",
   },
   {
-    imageUrl: python,
+    imageUrl: "/python.svg",
     title: "Python",
     description: "A versatile programming language for backend, data, and scripting.",
   },
   {
-    imageUrl: docker,
+    imageUrl: "/docker.svg",
     title: "Docker",
     description: "Platform for building, running, and shipping containers.",
   },
-
   {
-    imageUrl: jest,
+    imageUrl: "/jest.svg",
     title: "Jest",
     description: "Delightful JavaScript testing framework.",
   },
   {
-    imageUrl: git,
+    imageUrl: "/git.svg",
     title: "Git",
     description: "Version control system for tracking code changes.",
   },
