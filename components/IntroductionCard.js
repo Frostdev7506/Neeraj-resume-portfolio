@@ -218,7 +218,7 @@ function IntroductionCard() {
               className="group relative px-10 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-2 border-slate-200 dark:border-slate-700 rounded-2xl text-slate-700 dark:text-slate-300 font-semibold text-lg hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 shadow-xl hover:shadow-2xl"
             >
               <span className="flex items-center gap-2">
-                💬 Let's Connect
+                💬 Lets Connect
               </span>
             </motion.a>
           </motion.div>
